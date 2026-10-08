@@ -28,17 +28,23 @@ Interactive study companion for the **AWS Certified Machine Learning Engineer â€
 
 ## Authoring
 
-Day content lives in `content/days-*.json`. After editing, regenerate `data.js`:
+Day content lives in `content/days-*.json`. After editing, regenerate the `data-N.js` chunks (kept small so they stay editable and load fast):
 
 ```bash
-python3 -c "
+python3 - <<'EOF'
 import json
 days = []
 for f in ['days-01-10.json','days-11-20.json','days-21-30.json']:
     days += json.load(open('content/'+f))
-open('data.js','w').write('window.STUDY_DAYS = ' + json.dumps(days, ensure_ascii=False, indent=1) + ';\n')
-"
+for i,(a,b) in enumerate([(1,10),(11,20),(21,30)],1):
+    part = [d for d in days if a <= d["day"] <= b]
+    blob = json.dumps(part, ensure_ascii=False, separators=(",",":"))
+    js = "window.STUDY_DAYS="+blob+";" if i==1 else "window.STUDY_DAYS.push("+blob[1:-1]+");"
+    open(f"data-{i}.js","w").write(js)
+EOF
 ```
+
+`index.html` loads `data-1.js`, `data-2.js`, `data-3.js` in order before `app.js`.
 
 ## Exam facts
 
