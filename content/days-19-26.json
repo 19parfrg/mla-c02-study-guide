@@ -21,7 +21,7 @@
     "time": "2h"
    },
    {
-    "code": "import boto3\n\ncw = boto3.client(\"cloudwatch\", region_name=\"us-east-1\")\ncw.put_metric_alarm(\n    AlarmName=\"sagemaker-endpoint-5xx\",\n    MetricName=\"Invocation5XXErrors\",\n    Namespace=\"AWS/SageMaker\",\n    Statistic=\"Sum\",\n    Period=300,\n    EvaluationPeriods=1,\n    Threshold=1,\n    ComparisonOperator=\"GreaterThanOrEqualToThreshold\",\n    Dimensions=[\n        {\"Name\": \"EndpointName\", \"Value\": \"my-endpoint\"},\n        {\"Name\": \"VariantName\", \"Value\": \"AllTraffic\"},\n    ],\n    AlarmActions=[\"arn:aws:sns:us-east-1:ACCOUNT_ID:ml-alerts\"],\n)\nprint(\"Alarm created — delete it after the lab if you do not need it.\")",
+    "code": "import boto3\n\ncw = boto3.client(\"cloudwatch\", region_name=\"us-east-2\")\ncw.put_metric_alarm(\n    AlarmName=\"sagemaker-endpoint-5xx\",\n    MetricName=\"Invocation5XXErrors\",\n    Namespace=\"AWS/SageMaker\",\n    Statistic=\"Sum\",\n    Period=300,\n    EvaluationPeriods=1,\n    Threshold=1,\n    ComparisonOperator=\"GreaterThanOrEqualToThreshold\",\n    Dimensions=[\n        {\"Name\": \"EndpointName\", \"Value\": \"my-endpoint\"},\n        {\"Name\": \"VariantName\", \"Value\": \"AllTraffic\"},\n    ],\n    AlarmActions=[\"arn:aws:sns:us-east-2:ACCOUNT_ID:ml-alerts\"],\n)\nprint(\"Alarm created — delete it after the lab if you do not need it.\")",
     "codeLang": "python",
     "label": "AWS mission",
     "steps": [
@@ -240,7 +240,7 @@
     "time": "2h"
    },
    {
-    "code": "import boto3\n\nsm = boto3.client(\"sagemaker\", region_name=\"us-east-1\")\n\n# The human checkpoint in an automated pipeline:\n# a model version sits at PendingManualApproval until someone approves it.\nsm.update_model_package(\n    ModelPackageArn=\"arn:aws:sagemaker:us-east-1:ACCOUNT_ID:model-package/my-group/1\",\n    ModelApprovalStatus=\"Approved\",\n)\nprint(\"Model version approved — CI/CD may now deploy it.\")",
+    "code": "import boto3\n\nsm = boto3.client(\"sagemaker\", region_name=\"us-east-2\")\n\n# The human checkpoint in an automated pipeline:\n# a model version sits at PendingManualApproval until someone approves it.\nsm.update_model_package(\n    ModelPackageArn=\"arn:aws:sagemaker:us-east-2:ACCOUNT_ID:model-package/my-group/1\",\n    ModelApprovalStatus=\"Approved\",\n)\nprint(\"Model version approved — CI/CD may now deploy it.\")",
     "codeLang": "python",
     "label": "AWS mission",
     "steps": [
@@ -465,7 +465,7 @@
     "time": "1.5h"
    },
    {
-    "code": "import boto3\nimport json\n\ns3 = boto3.client(\"s3\", region_name=\"us-east-1\")\nbucket = \"my-ml-test-bucket\"  # replace with your test bucket\n\npolicy = {\n    \"Version\": \"2012-10-17\",\n    \"Statement\": [{\n        \"Sid\": \"DenyUnencryptedUploads\",\n        \"Effect\": \"Deny\",\n        \"Principal\": \"*\",\n        \"Action\": \"s3:PutObject\",\n        \"Resource\": \"arn:aws:s3:::\" + bucket + \"/*\",\n        \"Condition\": {\n            \"StringNotEquals\": {\"s3:x-amz-server-side-encryption\": \"aws:kms\"}\n        },\n    }],\n}\ns3.put_bucket_policy(Bucket=bucket, Policy=json.dumps(policy))\nprint(\"Policy attached — test an unencrypted upload, then remove the policy.\")",
+    "code": "import boto3\nimport json\n\ns3 = boto3.client(\"s3\", region_name=\"us-east-2\")\nbucket = \"my-ml-test-bucket\"  # replace with your test bucket\n\npolicy = {\n    \"Version\": \"2012-10-17\",\n    \"Statement\": [{\n        \"Sid\": \"DenyUnencryptedUploads\",\n        \"Effect\": \"Deny\",\n        \"Principal\": \"*\",\n        \"Action\": \"s3:PutObject\",\n        \"Resource\": \"arn:aws:s3:::\" + bucket + \"/*\",\n        \"Condition\": {\n            \"StringNotEquals\": {\"s3:x-amz-server-side-encryption\": \"aws:kms\"}\n        },\n    }],\n}\ns3.put_bucket_policy(Bucket=bucket, Policy=json.dumps(policy))\nprint(\"Policy attached — test an unencrypted upload, then remove the policy.\")",
     "codeLang": "python",
     "label": "AWS mission",
     "steps": [
@@ -479,7 +479,7 @@
     "aws": true
    },
    {
-    "code": "import boto3\n\nct = boto3.client(\"cloudtrail\", region_name=\"us-east-1\")\nfor t in ct.describe_trails()[\"trailList\"]:\n    print(t[\"Name\"],\n          \"multi-region:\", t.get(\"IsMultiRegionTrail\"),\n          \"validation:\", t.get(\"LogFileValidationEnabled\"))",
+    "code": "import boto3\n\nct = boto3.client(\"cloudtrail\", region_name=\"us-east-2\")\nfor t in ct.describe_trails()[\"trailList\"]:\n    print(t[\"Name\"],\n          \"multi-region:\", t.get(\"IsMultiRegionTrail\"),\n          \"validation:\", t.get(\"LogFileValidationEnabled\"))",
     "codeLang": "python",
     "label": "Bonus mission: VPC Networking, PrivateLink & CloudTrail",
     "steps": [
@@ -848,7 +848,7 @@
      "Teardown: the script deletes the guardrail; delete the log group if you made one, then run `tools/aws-sweep.ps1`"
     ],
     "codeLang": "python",
-    "code": "import boto3\n\nREGION = \"us-east-1\"\nMODEL_ID = \"amazon.nova-micro-v1:0\"   # use an inference profile ID if on-demand is refused\nbd = boto3.client(\"bedrock\", region_name=REGION)\nrt = boto3.client(\"bedrock-runtime\", region_name=REGION)\n\ng = bd.create_guardrail(\n    name=\"mla-day22-guardrail\",\n    blockedInputMessaging=\"Blocked by guardrail.\",\n    blockedOutputsMessaging=\"Blocked by guardrail.\",\n    topicPolicyConfig={\"topicsConfig\": [{\n        \"name\": \"InvestmentAdvice\", \"type\": \"DENY\",\n        \"definition\": \"Recommendations to buy or sell specific financial assets.\",\n    }]},\n    sensitiveInformationPolicyConfig={\"piiEntitiesConfig\": [\n        {\"type\": \"EMAIL\", \"action\": \"ANONYMIZE\"},\n        {\"type\": \"US_SOCIAL_SECURITY_NUMBER\", \"action\": \"BLOCK\"},\n    ]},\n)\ngid = g[\"guardrailId\"]\n\ntry:\n    for text in [\n        \"Explain what model drift is.\",\n        \"Which stock should I buy this week?\",\n        \"Email the report to pat@example.com when the job finishes.\",\n    ]:\n        r = rt.apply_guardrail(guardrailIdentifier=gid, guardrailVersion=\"DRAFT\",\n                               source=\"INPUT\", content=[{\"text\": {\"text\": text}}])\n        shown = r[\"outputs\"][0][\"text\"] if r[\"outputs\"] else text\n        print(f'{r[\"action\"]:22} | {shown}')\n\n    resp = rt.converse(\n        modelId=MODEL_ID,\n        messages=[{\"role\": \"user\", \"content\": [{\"text\": \"Explain model drift in two sentences.\"}]}],\n        inferenceConfig={\"maxTokens\": 120},\n        guardrailConfig={\"guardrailIdentifier\": gid, \"guardrailVersion\": \"DRAFT\"},\n    )\n    u = resp[\"usage\"]\n    print(\"stopReason:\", resp[\"stopReason\"], \"| input tokens:\", u[\"inputTokens\"], \"| output tokens:\", u[\"outputTokens\"])\nfinally:\n    bd.delete_guardrail(guardrailIdentifier=gid)   # TEARDOWN\n    print(\"guardrail deleted\")"
+    "code": "import boto3\n\nREGION = \"us-east-2\"\nMODEL_ID = \"us.amazon.nova-micro-v1:0\"   # Nova Micro is reached through an inference profile in us-east-2\nbd = boto3.client(\"bedrock\", region_name=REGION)\nrt = boto3.client(\"bedrock-runtime\", region_name=REGION)\n\ng = bd.create_guardrail(\n    name=\"mla-day22-guardrail\",\n    blockedInputMessaging=\"Blocked by guardrail.\",\n    blockedOutputsMessaging=\"Blocked by guardrail.\",\n    topicPolicyConfig={\"topicsConfig\": [{\n        \"name\": \"InvestmentAdvice\", \"type\": \"DENY\",\n        \"definition\": \"Recommendations to buy or sell specific financial assets.\",\n    }]},\n    sensitiveInformationPolicyConfig={\"piiEntitiesConfig\": [\n        {\"type\": \"EMAIL\", \"action\": \"ANONYMIZE\"},\n        {\"type\": \"US_SOCIAL_SECURITY_NUMBER\", \"action\": \"BLOCK\"},\n    ]},\n)\ngid = g[\"guardrailId\"]\n\ntry:\n    for text in [\n        \"Explain what model drift is.\",\n        \"Which stock should I buy this week?\",\n        \"Email the report to pat@example.com when the job finishes.\",\n    ]:\n        r = rt.apply_guardrail(guardrailIdentifier=gid, guardrailVersion=\"DRAFT\",\n                               source=\"INPUT\", content=[{\"text\": {\"text\": text}}])\n        shown = r[\"outputs\"][0][\"text\"] if r[\"outputs\"] else text\n        print(f'{r[\"action\"]:22} | {shown}')\n\n    resp = rt.converse(\n        modelId=MODEL_ID,\n        messages=[{\"role\": \"user\", \"content\": [{\"text\": \"Explain model drift in two sentences.\"}]}],\n        inferenceConfig={\"maxTokens\": 120},\n        guardrailConfig={\"guardrailIdentifier\": gid, \"guardrailVersion\": \"DRAFT\"},\n    )\n    u = resp[\"usage\"]\n    print(\"stopReason:\", resp[\"stopReason\"], \"| input tokens:\", u[\"inputTokens\"], \"| output tokens:\", u[\"outputTokens\"])\nfinally:\n    bd.delete_guardrail(guardrailIdentifier=gid)   # TEARDOWN\n    print(\"guardrail deleted\")"
    },
    {
     "time": "0.5h",

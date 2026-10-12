@@ -677,7 +677,7 @@
      "In the Athena query editor, run `SELECT * FROM <your_table> LIMIT 10` and note the 'Data scanned' figure",
      "Run a filtered aggregate query (e.g. `SELECT COUNT(*) FROM <your_table> WHERE year='2026'`) and compare data scanned — partitioning at work",
      "Create a CTAS query that writes a Parquet, partitioned copy to a new prefix, then query the new table and compare scanned bytes",
-     "In the Kinesis console, open Firehose and walk through creating a delivery stream to S3 (stop before creating it) — note the buffering hints and compression options"
+     "Blocked on the AWS free plan — read the linked docs instead, or upgrade the plan first. In the Kinesis console, open Firehose and walk through creating a delivery stream to S3 (stop before creating it) — note the buffering hints and compression options"
     ],
     "mission": true,
     "aws": true
@@ -888,7 +888,7 @@
      "In the SageMaker console, open Ground Truth and walk through creating a labeling job (bounding boxes) — stop at workforce selection and compare the three workforce options and their cost/privacy tradeoffs",
      "In the SageMaker console, open Clarify and run a bias analysis on a sample dataset if available, or review the pre-training vs post-training metric definitions in the Clarify documentation",
      "Sketch on paper: for a medical-image classifier, which workforce would you pick and why? For 10M product-review sentiment labels?",
-     "In the EMR console, compare launching a cluster vs EMR Serverless — note what you manage in each case"
+     "Blocked on the AWS free plan — read the linked docs instead, or upgrade the plan first. In the EMR console, compare launching a cluster vs EMR Serverless — note what you manage in each case"
     ],
     "mission": true,
     "aws": true
@@ -1324,15 +1324,15 @@
     "aws": true,
     "cost": "under $0.10",
     "steps": [
-     "In the Bedrock console, confirm you have access to `Titan Text Embeddings V2` in `us-east-1`",
+     "In the Bedrock console, confirm you have access to `Titan Text Embeddings V2` in `us-east-2`",
      "Run the code below: it embeds five short documents, stores them in an S3 Vectors index with metadata, and runs a similarity query. If a call signature has changed, check the boto3 `s3vectors` reference — this service is new",
      "Experiment 1: change `dims` to 256 everywhere (index and embed) and rerun. Do the top results change? Note the storage saving: 4x fewer floats per vector",
      "Experiment 2: add a `filter` on the `topic` metadata to the query and confirm only matching documents come back",
-     "Experiment 3: call Comprehend `detect_pii_entities` on a sentence with a fake name, email, and phone number, and print the entity types and offsets you would redact before embedding",
+     "Blocked on the AWS free plan — read the linked docs instead, or upgrade the plan first. Experiment 3: call Comprehend `detect_pii_entities` on a sentence with a fake name, email, and phone number, and print the entity types and offsets you would redact before embedding",
      "Teardown: run the delete calls at the bottom, then confirm with `tools/aws-sweep.ps1` that nothing is left"
     ],
     "codeLang": "python",
-    "code": "import boto3, json\n\nREGION = \"us-east-1\"\nBUCKET, INDEX = \"mla-day7-vectors-CHANGEME\", \"docs\"   # bucket names are account-regional; make it yours\nbr = boto3.client(\"bedrock-runtime\", region_name=REGION)\ns3v = boto3.client(\"s3vectors\", region_name=REGION)\n\ndef embed(text, dims=1024):\n    body = json.dumps({\"inputText\": text, \"dimensions\": dims, \"normalize\": True})\n    r = br.invoke_model(modelId=\"amazon.titan-embed-text-v2:0\", body=body)\n    return json.loads(r[\"body\"].read())[\"embedding\"]\n\ndocs = {\n    \"deploy-serverless\": \"Serverless inference scales to zero and suits spiky, intermittent traffic.\",\n    \"deploy-batch\": \"Batch transform scores large S3 datasets offline with no persistent endpoint.\",\n    \"data-glue\": \"Glue crawlers infer schemas and populate the Data Catalog.\",\n    \"data-kinesis\": \"Kinesis Data Streams ingests real-time records for streaming pipelines.\",\n    \"security-kms\": \"KMS customer managed keys encrypt training volumes and model artifacts.\",\n}\n\ns3v.create_vector_bucket(vectorBucketName=BUCKET)\ns3v.create_index(vectorBucketName=BUCKET, indexName=INDEX,\n                 dataType=\"float32\", dimension=1024, distanceMetric=\"cosine\")\ns3v.put_vectors(vectorBucketName=BUCKET, indexName=INDEX, vectors=[\n    {\"key\": k, \"data\": {\"float32\": embed(v)},\n     \"metadata\": {\"text\": v, \"topic\": k.split(\"-\")[0]}}\n    for k, v in docs.items()\n])\n\nhits = s3v.query_vectors(\n    vectorBucketName=BUCKET, indexName=INDEX, topK=2,\n    queryVector={\"float32\": embed(\"How do I serve unpredictable traffic cheaply?\")},\n    returnMetadata=True, returnDistance=True,\n)\nfor h in hits[\"vectors\"]:\n    print(round(h[\"distance\"], 3), h[\"key\"], \"|\", h[\"metadata\"][\"text\"])\n\n# TEARDOWN - run when finished\n# s3v.delete_index(vectorBucketName=BUCKET, indexName=INDEX)\n# s3v.delete_vector_bucket(vectorBucketName=BUCKET)"
+    "code": "import boto3, json\n\nREGION = \"us-east-2\"\nBUCKET, INDEX = \"mla-day7-vectors-CHANGEME\", \"docs\"   # bucket names are account-regional; make it yours\nbr = boto3.client(\"bedrock-runtime\", region_name=REGION)\ns3v = boto3.client(\"s3vectors\", region_name=REGION)\n\ndef embed(text, dims=1024):\n    body = json.dumps({\"inputText\": text, \"dimensions\": dims, \"normalize\": True})\n    r = br.invoke_model(modelId=\"amazon.titan-embed-text-v2:0\", body=body)\n    return json.loads(r[\"body\"].read())[\"embedding\"]\n\ndocs = {\n    \"deploy-serverless\": \"Serverless inference scales to zero and suits spiky, intermittent traffic.\",\n    \"deploy-batch\": \"Batch transform scores large S3 datasets offline with no persistent endpoint.\",\n    \"data-glue\": \"Glue crawlers infer schemas and populate the Data Catalog.\",\n    \"data-kinesis\": \"Kinesis Data Streams ingests real-time records for streaming pipelines.\",\n    \"security-kms\": \"KMS customer managed keys encrypt training volumes and model artifacts.\",\n}\n\ns3v.create_vector_bucket(vectorBucketName=BUCKET)\ns3v.create_index(vectorBucketName=BUCKET, indexName=INDEX,\n                 dataType=\"float32\", dimension=1024, distanceMetric=\"cosine\")\ns3v.put_vectors(vectorBucketName=BUCKET, indexName=INDEX, vectors=[\n    {\"key\": k, \"data\": {\"float32\": embed(v)},\n     \"metadata\": {\"text\": v, \"topic\": k.split(\"-\")[0]}}\n    for k, v in docs.items()\n])\n\nhits = s3v.query_vectors(\n    vectorBucketName=BUCKET, indexName=INDEX, topK=2,\n    queryVector={\"float32\": embed(\"How do I serve unpredictable traffic cheaply?\")},\n    returnMetadata=True, returnDistance=True,\n)\nfor h in hits[\"vectors\"]:\n    print(round(h[\"distance\"], 3), h[\"key\"], \"|\", h[\"metadata\"][\"text\"])\n\n# TEARDOWN - run when finished\n# s3v.delete_index(vectorBucketName=BUCKET, indexName=INDEX)\n# s3v.delete_vector_bucket(vectorBucketName=BUCKET)"
    },
    {
     "time": "0.5h",

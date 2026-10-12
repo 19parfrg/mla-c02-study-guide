@@ -2,20 +2,24 @@
 .SYNOPSIS
   Read-only sweep for study-lab leftovers that keep billing. Run after every AWS mission.
 .EXAMPLE
-  .\tools\aws-sweep.ps1 -Region us-east-1
+  .\tools\aws-sweep.ps1 -Region us-east-2 -Profile grant
 #>
-param([string]$Region = "us-east-1")
+param(
+    [string]$Region = "us-east-2",
+    [string]$Profile = $(if ($env:AWS_PROFILE) { $env:AWS_PROFILE } else { "grant" })
+)
+$env:PYTHONUTF8 = "1"   # the CLI crashes on non-ASCII output under the default Windows code page
 
 if (-not (Get-Command aws -ErrorAction SilentlyContinue)) {
     Write-Error "AWS CLI not found. Install it with: winget install Amazon.AWSCLI"
     exit 1
 }
-$who = aws sts get-caller-identity --query Account --output text 2>&1
+$who = aws sts get-caller-identity --profile $Profile --query Account --output text 2>&1
 if ($LASTEXITCODE -ne 0) {
-    Write-Error "Not signed in to AWS: $who"
+    Write-Error "Not signed in to AWS as profile '$Profile'. Run: aws login --profile $Profile`n$who"
     exit 1
 }
-Write-Host "Account $who · Region $Region`n"
+Write-Host "Account $who · Profile $Profile · Region $Region`n"
 
 # name, why it matters, CLI arguments (each returns a tab-separated list of resource names)
 $checks = @(
@@ -38,12 +42,14 @@ $checks = @(
     @("VPC interface endpoints",        "bill hourly",                   @("ec2", "describe-vpc-endpoints", "--filters", "Name=vpc-endpoint-type,Values=Interface", "--query", "VpcEndpoints[].VpcEndpointId"))
 )
 
-$found = 0
+$found = 0; $unchecked = 0
 foreach ($c in $checks) {
-    $cliArgs = $c[2] + @("--region", $Region, "--output", "text")
+    $cliArgs = $c[2] + @("--region", $Region, "--profile", $Profile, "--output", "text")
     $out = & aws @cliArgs 2>&1
     if ($LASTEXITCODE -ne 0) {
-        Write-Host ("  ?  {0,-32} could not check: {1}" -f $c[0], (($out | Out-String).Trim() -split "`n")[-1]) -ForegroundColor DarkGray
+        $why = if (($out | Out-String) -match 'service control policy') { "blocked for this project" } else { (($out | Out-String).Trim() -split "`n")[-1] }
+        Write-Host ("  ?  {0,-32} could not check: {1}" -f $c[0], $why) -ForegroundColor DarkGray
+        $unchecked++
         continue
     }
     $names = @(($out | Out-String) -split "\s+" | Where-Object { $_ -and $_ -ne "None" })
@@ -58,7 +64,10 @@ foreach ($c in $checks) {
 Write-Host ""
 if ($found) {
     Write-Host "$found resource(s) still exist in $Region. Delete what you are finished with." -ForegroundColor Yellow
+} elseif ($unchecked -eq $checks.Count) {
+    Write-Host "Could not check anything. Is $Region the Region your project allows?" -ForegroundColor Red
 } else {
     Write-Host "Clean. Nothing from the study labs is running in $Region." -ForegroundColor Green
 }
+if ($unchecked) { Write-Host "$unchecked check(s) were skipped: those services are blocked for this project, so nothing can be running there." }
 Write-Host "S3 buckets and CloudWatch log groups are not listed here; they cost little but check them at the end of each chapter."

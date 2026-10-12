@@ -34,12 +34,12 @@ Days 7, 18, and 22 cover the generative AI skills added in ME1-C02: vector store
 
 ## AWS missions
 
-17 of the days have a hands-on mission in a real AWS account. Work through **Base camp** on the HQ page first: budget alert, AWS command line interface (CLI), Region, and Bedrock model access.
+17 of the days have a hands-on mission in a real AWS account. Work through **Base camp** on the HQ page first: sign-in, default profile, Region, plan limits, and Bedrock model access.
 
 After every mission, check for leftovers that keep billing:
 
 ```powershell
-.\tools\aws-sweep.ps1 -Region us-east-1
+.\tools\aws-sweep.ps1
 ```
 
 The script is read-only. It lists endpoints, notebooks, running jobs, knowledge bases, vector stores, and similar resources; it deletes nothing.

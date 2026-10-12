@@ -24,14 +24,14 @@
   var SESSION_CARDS = 20;
 
   var SETUP = [
-    "Sign in to your AWS account as an admin user, not root, with multi-factor authentication (MFA) on the root user",
-    "Billing console → Budgets: create a $25 monthly cost budget with an email alert at 50% and 100%",
-    "Install the AWS command line interface (CLI): `winget install Amazon.AWSCLI`, then reopen the terminal",
-    "Run `aws configure sso` (or `aws configure`) and confirm `aws sts get-caller-identity` returns your account",
-    "Pick one Region for every mission — `us-east-1` has the widest Bedrock model list",
-    "Bedrock console → Model access: enable Amazon Nova and Titan Text Embeddings V2",
+    "Sign in from a terminal: `aws login --profile grant`. It lasts 12 hours and renews for 90 days without the browser",
+    "Run `setx AWS_PROFILE grant` once and reopen the terminal, so the CLI and every boto3 lab script use that sign-in by default",
+    "Confirm `aws sts get-caller-identity` returns your project's account",
+    "Your project is locked to one Region, `us-east-2`. Use it for every mission; other Regions return access denied",
+    "Check your plan and remaining credits: `aws freetier get-account-plan-state`. On the free plan, Kinesis, Firehose, EMR, DMS, Comprehend, Inspector, Macie, and Textract are blocked — read those sections, or upgrade in AWS Settings to do them hands-on",
+    "Bedrock console (us-east-2) → confirm you can open Amazon Nova and Titan Text Embeddings V2 in the playground",
     "`pip install boto3 sagemaker scikit-learn xgboost pandas`",
-    "Run `tools/aws-sweep.ps1` once so you know what a clean account looks like",
+    "Run `tools/aws-sweep.ps1` once so you know what a clean project looks like",
     "Book the exam under code ME1-C02 and set the date in the countdown above"
   ];
 
