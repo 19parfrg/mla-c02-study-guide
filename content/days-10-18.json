@@ -4,7 +4,7 @@
    {
     "label": "Warm-up",
     "steps": [
-     "Re-read the Domain 2 task statements in the MLA-C02 exam guide (PDF) and highlight every mention of training infrastructure.",
+     "Re-read the Domain 2 task statements in the ME1-C02 exam guide (PDF) and highlight every mention of training infrastructure.",
      "From memory, list the SageMaker instance families you know (m5, c5, p3, g5, inf1, trn1) and write one line on what each is for — then check yourself against today's notes."
     ],
     "time": "0.5h"
@@ -632,7 +632,7 @@
   ],
   "resources": [
    {
-    "label": "MLA-C02 exam guide (PDF)",
+    "label": "ME1-C02 exam guide (PDF)",
     "note": "Check which evaluation concepts appear in the Domain 2 task statements.",
     "url": "https://docs.aws.amazon.com/pdfs/aws-certification/latest/machine-learning-engineer-associate-02/machine-learning-engineer-associate-02.pdf"
    },
@@ -859,7 +859,7 @@
   ],
   "resources": [
    {
-    "label": "MLA-C02 exam guide (web)",
+    "label": "ME1-C02 exam guide (web)",
     "note": "Scope authority for how deep the Bedrock/generative-AI content goes.",
     "url": "https://docs.aws.amazon.com/aws-certification/latest/machine-learning-engineer-associate-02/machine-learning-engineer-associate-02.html"
    },
@@ -968,7 +968,7 @@
      "AgentCore = managed infrastructure for running agents in production: deploy, scale, and operate agents without building the runtime scaffolding.",
      "Covers the production concerns agents need: secure runtime, memory primitives, identity and gateway for tool access, observability.",
      "Mental model: Bedrock Agents = the agent framework; AgentCore = the production runtime it (and other agents) run on.",
-     "This is new MLA-C02 territory — know it at the 'what problem does it solve' level, not API level."
+     "This is new ME1-C02 territory — know it at the 'what problem does it solve' level, not API level."
     ]
    },
    {
@@ -1061,7 +1061,7 @@
     "url": "https://skillbuilder.aws"
    },
    {
-    "label": "MLA-C02 exam guide (PDF)",
+    "label": "ME1-C02 exam guide (PDF)",
     "note": "Confirm agentic-AI scope in the Domain 2/3 task statements.",
     "url": "https://docs.aws.amazon.com/pdfs/aws-certification/latest/machine-learning-engineer-associate-02/machine-learning-engineer-associate-02.pdf"
    }
@@ -1988,7 +1988,7 @@
     "steps": [
      "Clear your bounty board and due flashcards — today ends with the Chapter 3 boss",
      "From memory, redraw the Day 14 inference 2x2 (real-time, serverless, async, batch). Today adds the FM equivalents",
-     "Skim [Domain 3 in the exam guide](https://docs.aws.amazon.com/aws-certification/latest/machine-learning-engineer-associate-02/machine-learning-engineer-associate-02-domain3.html) and mark 3.1.4–3.1.8, 3.2.7–3.2.11 and 3.3.7–3.3.11 — all new in MLA-C02"
+     "Skim [Domain 3 in the exam guide](https://docs.aws.amazon.com/aws-certification/latest/machine-learning-engineer-associate-02/machine-learning-engineer-associate-02-domain3.html) and mark 3.1.4–3.1.8, 3.2.7–3.2.11 and 3.3.7–3.3.11 — all new in ME1-C02"
     ]
    },
    {

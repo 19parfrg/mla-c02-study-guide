@@ -1,4 +1,4 @@
-/* MLA-C02 Study Quest — renderer, game engine, progress tracking (localStorage only) */
+/* ME1-C02 Study Quest — renderer, game engine, progress tracking (localStorage only) */
 (function () {
   "use strict";
   var DAYS = window.STUDY_DAYS || [];
@@ -32,7 +32,7 @@
     "Bedrock console → Model access: enable Amazon Nova and Titan Text Embeddings V2",
     "`pip install boto3 sagemaker scikit-learn xgboost pandas`",
     "Run `tools/aws-sweep.ps1` once so you know what a clean account looks like",
-    "Book the exam (code ME1-C02 while in beta) and set the date in the countdown above"
+    "Book the exam under code ME1-C02 and set the date in the countdown above"
   ];
 
   var ACHIEVEMENTS = [
@@ -344,7 +344,8 @@
     var xp = totalXp(), r = rankOf(xp), s = streak(), m = mastery(), ready = readiness();
     var nd = nextDay(), d = DAYS[nd - 1], left = DAYS.length - daysDone();
     var todayXp = progress.log[today()] || 0;
-    var h = '<div class="eyebrow">Headquarters</div><h1 class="day-title">MLA-C02 Study Quest</h1>';
+    var h = '<div class="eyebrow">Headquarters</div><h1 class="day-title">ME1-C02 Study Quest</h1>';
+    h += '<p class="lede">ME1-C02 is the exam code for the beta of the updated AWS Certified Machine Learning Engineer – Associate exam, which AWS documents as MLA-C02. Register under ME1-C02; search for MLA-C02 when looking for third-party practice material.</p>';
 
     h += '<div class="hq-grid">';
     h += '<div class="stat"><div class="stat-k">Rank</div><div class="stat-v">Lv ' + r.level + '</div><div class="stat-s">' + esc(r.name) + "</div></div>";
@@ -432,7 +433,7 @@
     h += '<h1 class="day-title">' + esc(d.title) + "</h1>";
     h += '<div class="badges">';
     if (d.domain) h += '<span class="badge">' + esc(d.domain) + "</span>";
-    if (d.isNew) h += '<span class="badge review">New in MLA-C02</span>';
+    if (d.isNew) h += '<span class="badge review">New in ME1-C02</span>';
     if (d.boss) h += '<span class="badge checkpoint">Boss fight</span>';
     if (d.isCheckpoint) h += '<span class="badge checkpoint">Checkpoint</span>';
     if (d.isLight) h += '<span class="badge">Light day</span>';

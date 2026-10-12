@@ -189,7 +189,7 @@
   ],
   "resources": [
    {
-    "label": "MLA-C02 exam guide (PDF)",
+    "label": "ME1-C02 exam guide (PDF)",
     "note": "Domain 4 task statements — know exactly which monitoring verbs the exam tests.",
     "url": "https://docs.aws.amazon.com/pdfs/aws-certification/latest/machine-learning-engineer-associate-02/machine-learning-engineer-associate-02.pdf"
    },
@@ -408,7 +408,7 @@
   ],
   "resources": [
    {
-    "label": "MLA-C02 exam guide (PDF)",
+    "label": "ME1-C02 exam guide (PDF)",
     "note": "Domain 4 tasks on retraining, pipelines, and human review.",
     "url": "https://docs.aws.amazon.com/pdfs/aws-certification/latest/machine-learning-engineer-associate-02/machine-learning-engineer-associate-02.pdf"
    },
@@ -765,7 +765,7 @@
   ],
   "resources": [
    {
-    "label": "MLA-C02 exam guide (PDF)",
+    "label": "ME1-C02 exam guide (PDF)",
     "note": "Domain 4 security tasks — the exact controls the exam expects you to pick.",
     "url": "https://docs.aws.amazon.com/pdfs/aws-certification/latest/machine-learning-engineer-associate-02/machine-learning-engineer-associate-02.pdf"
    },
@@ -811,7 +811,7 @@
     "steps": [
      "Clear your bounty board and due flashcards — today ends with the Chapter 4 boss",
      "From memory: which Day 11 metrics apply to generated text, and what does each one measure?",
-     "Skim [Domain 4 in the exam guide](https://docs.aws.amazon.com/aws-certification/latest/machine-learning-engineer-associate-02/machine-learning-engineer-associate-02-domain4.html) and mark 4.1.5–4.1.6, 4.2.7–4.2.10, 4.3.1 and 4.3.8–4.3.9 — all new in MLA-C02"
+     "Skim [Domain 4 in the exam guide](https://docs.aws.amazon.com/aws-certification/latest/machine-learning-engineer-associate-02/machine-learning-engineer-associate-02-domain4.html) and mark 4.1.5–4.1.6, 4.2.7–4.2.10, 4.3.1 and 4.3.8–4.3.9 — all new in ME1-C02"
     ]
    },
    {
@@ -1492,7 +1492,7 @@
     "url": "https://github.com/ccsusan/aws-mla-certificate"
    },
    {
-    "label": "MLA-C02 exam guide (PDF)",
+    "label": "ME1-C02 exam guide (PDF)",
     "note": "Task statements to check coverage against; nothing unmapped should remain.",
     "url": "https://docs.aws.amazon.com/pdfs/aws-certification/latest/machine-learning-engineer-associate-02/machine-learning-engineer-associate-02.pdf"
    },
@@ -1668,7 +1668,7 @@
   ],
   "resources": [
    {
-    "label": "MLA-C02 exam guide (PDF)",
+    "label": "ME1-C02 exam guide (PDF)",
     "note": "Re-check any task statement your misses cluster around.",
     "url": "https://docs.aws.amazon.com/pdfs/aws-certification/latest/machine-learning-engineer-associate-02/machine-learning-engineer-associate-02.pdf"
    },
@@ -1835,7 +1835,7 @@
   ],
   "resources": [
    {
-    "label": "MLA-C02 exam guide (PDF)",
+    "label": "ME1-C02 exam guide (PDF)",
     "note": "Final check on any task statement both exams probed.",
     "url": "https://docs.aws.amazon.com/pdfs/aws-certification/latest/machine-learning-engineer-associate-02/machine-learning-engineer-associate-02.pdf"
    },
@@ -1993,7 +1993,7 @@
   ],
   "resources": [
    {
-    "label": "MLA-C02 exam guide (web)",
+    "label": "ME1-C02 exam guide (web)",
     "note": "One last skim of the domain weights — then close it.",
     "url": "https://docs.aws.amazon.com/aws-certification/latest/machine-learning-engineer-associate-02/machine-learning-engineer-associate-02.html"
    },

@@ -1,6 +1,6 @@
-# MLA-C02 Study Quest — 26-Day Gamified Prep
+# ME1-C02 Study Quest — 26-Day Gamified Prep
 
-Gamified study plan for the **AWS Certified Machine Learning Engineer – Associate (MLA-C02)** exam (currently in beta).
+Gamified study plan for the **AWS Certified Machine Learning Engineer – Associate** beta exam, code **ME1-C02**. ME1-C02 is the beta of the updated exam that AWS documents as MLA-C02; third-party material uses the MLA-C02 name.
 
 **Live site:** https://19parfrg.github.io/mla-c02-study-guide/ (GitHub Pages, served from `main`).
 
@@ -16,7 +16,7 @@ Gamified study plan for the **AWS Certified Machine Learning Engineer – Associ
 | 4 · Operate | 19–22 | Domain 4: Operating, Monitoring, Securing (24%) | Day 22 |
 | 5 · Endgame | 23–26 | Triage, two timed practice exams, exam eve (light day) | — |
 
-Days 7, 18, and 22 cover the generative AI skills added in MLA-C02: vector stores, embeddings, Retrieval Augmented Generation (RAG) data prep, knowledge bases, agents, prompt management, evaluation, cost, and guardrails.
+Days 7, 18, and 22 cover the generative AI skills added in ME1-C02: vector stores, embeddings, Retrieval Augmented Generation (RAG) data prep, knowledge bases, agents, prompt management, evaluation, cost, and guardrails.
 
 ## Daily loop
 
@@ -68,6 +68,6 @@ Day fields beyond the basics: `week` (chapter 1–5), `dom` (exam domain 1–4 f
 
 ## Exam facts
 
-- Exam: MLA-C02 (beta, code ME1-C02) · $75 beta · 85 questions · 170 minutes · passing score 720/1000
+- Exam: ME1-C02 (beta of MLA-C02) · $75 beta · 85 questions · 170 minutes · passing score 720/1000
 - Domains: Data Preparation 28% · Model/FM Development 24% · Deployment & Orchestration 24% · Operating/Monitoring/Securing 24%
 - Standard (non-beta) version launches January 14, 2027
