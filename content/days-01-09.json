@@ -36,13 +36,13 @@
     "time": "1.5h",
     "label": "Local lab",
     "steps": [
-     "Set up a local Python environment with `pip install scikit-learn` (or use a SageMaker Studio notebook, where it is preinstalled)",
-     "Run the code below: it trains two decision trees on the Iris dataset — one unconstrained, one limited to depth 3 — and prints train vs validation accuracy",
-     "Confirm the signature: the unconstrained tree should hit about 1.000 train accuracy with a lower validation score (overfitting); the depth-3 tree should show a much smaller train/validation gap",
-     "Bonus: retrain on only 20 samples and vary `random_state` — watch validation accuracy swing. That instability is high variance from too little data",
+     "Save the code below as `day1.py` and run it with `python day1.py`. It builds a synthetic dataset with 15% of its labels deliberately flipped, then trains two decision trees: one unconstrained, one limited to depth 3",
+     "Confirm the signature: the unconstrained tree scores 1.000 on train but only about 0.63 on validation (it memorized the noise — overfitting). The depth-3 tree scores about 0.81 train and 0.74 validation: a worse train score, a better validation score, and a much smaller gap",
+     "Experiment: try `max_depth` values of 1, 2, 5, and 10. Depth 1 underfits (both scores low); find the depth where validation accuracy peaks before it falls again. That peak is the bias/variance sweet spot",
+     "Bonus: retrain the unconstrained tree on only 20 training rows with different `random_state` values and watch validation accuracy swing between roughly 0.45 and 0.72. That instability is high variance from too little data",
      "Do not touch the test split today — that restraint is exactly the discipline the exam tests"
     ],
-    "code": "from sklearn.datasets import load_iris\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.tree import DecisionTreeClassifier\nfrom sklearn.metrics import accuracy_score\n\nX, y = load_iris(return_X_y=True)\nX_train, X_temp, y_train, y_temp = train_test_split(X, y, test_size=0.4, random_state=42)\nX_val, X_test, y_val, y_test = train_test_split(X_temp, y_temp, test_size=0.5, random_state=42)\n\nfor depth in [None, 3]:\n    clf = DecisionTreeClassifier(max_depth=depth, random_state=42)\n    clf.fit(X_train, y_train)\n    train_acc = accuracy_score(y_train, clf.predict(X_train))\n    val_acc = accuracy_score(y_val, clf.predict(X_val))\n    print(f\"max_depth={depth}: train={train_acc:.3f} val={val_acc:.3f}\")",
+    "code": "from sklearn.datasets import make_classification\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.tree import DecisionTreeClassifier\nfrom sklearn.metrics import accuracy_score\n\n# Synthetic data with 15% of labels flipped: noise an unconstrained tree will memorize\nX, y = make_classification(n_samples=600, n_features=20, n_informative=5,\n                           flip_y=0.15, random_state=42)\nX_train, X_temp, y_train, y_temp = train_test_split(X, y, test_size=0.4, random_state=42)\nX_val, X_test, y_val, y_test = train_test_split(X_temp, y_temp, test_size=0.5, random_state=42)\n\nfor depth in [None, 3]:\n    clf = DecisionTreeClassifier(max_depth=depth, random_state=42)\n    clf.fit(X_train, y_train)\n    train_acc = accuracy_score(y_train, clf.predict(X_train))\n    val_acc = accuracy_score(y_val, clf.predict(X_val))\n    print(f\"max_depth={depth}: train={train_acc:.3f} val={val_acc:.3f}\")",
     "codeLang": "python",
     "mission": true
    },
@@ -50,7 +50,7 @@
     "time": "1h",
     "label": "Practice + teach-it-back",
     "steps": [
-     "Answer 20 practice questions on today's topics from the tracker's quiz and your flagged-question review",
+     "Take the quiz below from memory and clear anything due on the bounty board. If you have an outside practice set (Tutorials Dojo or Skill Builder), add 15 more questions on today's topics",
      "Close everything and write one paragraph from memory explaining the bias/variance tradeoff in your own words",
      "Check it against your notes and fix what you missed — the gaps become tomorrow's review list"
     ]
@@ -90,7 +90,8 @@
      "`Training set`: fits model parameters. `Validation set`: tunes hyperparameters and compares candidate models",
      "`Test set`: used exactly once, at the very end, for an unbiased estimate of real-world performance",
      "`Data leakage` is any path by which test information influences training — tuning on the test set is the classic case",
-     "`Cross-validation` (e.g. k-fold) is the robust alternative when data is scarce: rotate which fold validates"
+     "`Cross-validation` (e.g. k-fold) is the robust alternative when data is scarce: rotate which fold validates",
+     "Leakage also happens before the split: fitting a scaler or imputer on the full dataset, or including a feature that is only known after the outcome (`target leakage`). Split first, then fit transforms on the training set only"
     ]
    },
    {
@@ -249,7 +250,7 @@
     "time": "1h",
     "label": "Practice + teach-it-back",
     "steps": [
-     "Answer 20 practice questions on S3 and data formats from the tracker's quiz and your flagged-question review",
+     "Take the quiz below from memory and clear anything due on the bounty board. If you have an outside practice set (Tutorials Dojo or Skill Builder), add 15 more questions on S3 and data formats",
      "Out loud, explain to an imaginary interviewer why a team would store training data as Parquet in S3 instead of CSV — cover cost, query speed, and schema",
      "Write down every stall; those terms go on tomorrow's warm-up list"
     ]
@@ -472,7 +473,7 @@
     "time": "1h",
     "label": "Practice + teach-it-back",
     "steps": [
-     "Answer 20 practice questions on Glue from the tracker's quiz and your flagged-question review",
+     "Take the quiz below from memory and clear anything due on the bounty board. If you have an outside practice set (Tutorials Dojo or Skill Builder), add 15 more questions on Glue",
      "Out loud: explain the difference between what a crawler does and what an ETL job does — and when you need each",
      "Log every stall for tomorrow's warm-up"
     ]
@@ -686,7 +687,7 @@
     "time": "1h",
     "label": "Practice + teach-it-back",
     "steps": [
-     "Answer 20 practice questions on Athena, Kinesis, and DMS from the tracker's quiz and your flagged-question review",
+     "Take the quiz below from memory and clear anything due on the bounty board. If you have an outside practice set (Tutorials Dojo or Skill Builder), add 15 more questions on Athena, Kinesis, and DMS",
      "Out loud: a teammate asks whether to use Kinesis Data Streams or Firehose for click events landing in S3 — give the decision and the reasoning",
      "Log every stall for the Day 7 review"
     ]
@@ -897,7 +898,7 @@
     "time": "1h",
     "label": "Practice + teach-it-back",
     "steps": [
-     "Answer 20 practice questions on Ground Truth, EMR, and Clarify from the tracker's quiz and your flagged-question review",
+     "Take the quiz below from memory and clear anything due on the bounty board. If you have an outside practice set (Tutorials Dojo or Skill Builder), add 15 more questions on Ground Truth, EMR, and Clarify",
      "Out loud: explain pre-training vs post-training bias metrics to an interviewer, with one example metric of each",
      "Log every stall for the Day 14 review"
     ]
@@ -1116,7 +1117,7 @@
     "time": "1h",
     "label": "Practice + teach-it-back",
     "steps": [
-     "Answer 20 practice questions on feature engineering from the tracker's quiz and your flagged-question review",
+     "Take the quiz below from memory and clear anything due on the bounty board. If you have an outside practice set (Tutorials Dojo or Skill Builder), add 15 more questions on feature engineering",
      "Out loud: explain train/serve skew and how a feature store prevents it — in under two minutes",
      "Log every stall for the Day 14 review"
     ]
@@ -1746,7 +1747,7 @@
     "time": "1h",
     "label": "Practice + teach-it-back",
     "steps": [
-     "Answer 20 practice questions on built-in algorithms from the tracker's quiz and your flagged-question review",
+     "Take the quiz below from memory and clear anything due on the bounty board. If you have an outside practice set (Tutorials Dojo or Skill Builder), add 15 more questions on built-in algorithms",
      "Out loud, 60 seconds per algorithm: when to use XGBoost, Linear Learner, K-means, and Factorization Machines — with one example each",
      "Log every stall for the Day 14 review"
     ]
@@ -1953,7 +1954,7 @@
     "time": "1h",
     "label": "Practice + teach-it-back",
     "steps": [
-     "Answer 20 practice questions on algorithms II from the tracker's quiz and your flagged-question review",
+     "Take the quiz below from memory and clear anything due on the bounty board. If you have an outside practice set (Tutorials Dojo or Skill Builder), add 15 more questions on algorithms II",
      "Out loud: explain the difference between image classification, object detection, and semantic segmentation with one example each",
      "Log every stall for the Day 14 review"
     ]
