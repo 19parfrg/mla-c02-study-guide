@@ -24,6 +24,7 @@
         "time": "2h",
         "label": "New material",
         "steps": [
+          "📖 Read first: [bli55 ML fundamentals (common/)](https://github.com/bli55/notes-aws-machine-learning/tree/main/common) — the main read · [ccsusan core-ml/](https://github.com/ccsusan/aws-mla-certificate/tree/master/core-ml) — quick definitions",
           "Supervised vs unsupervised: supervised learns from labeled examples (input mapped to a known output); unsupervised finds structure in unlabeled data. Learn two examples of each cold",
           "Bias/variance tradeoff: high bias means the model is too simple and misses patterns (underfits); high variance means it is too sensitive to training noise (overfits). Reducing one raises the other",
           "Overfitting vs underfitting signatures: overfit = strong train metrics but weak validation metrics; underfit = weak metrics on both",
@@ -218,6 +219,7 @@
         "time": "2h",
         "label": "New material",
         "steps": [
+          "📖 Read first: [bli55 data ingestion & storage](https://github.com/bli55/notes-aws-machine-learning/tree/main/02-data-ingestion-and-storage) (S3 sections) · [ccsusan data-services.md](https://github.com/ccsusan/aws-mla-certificate/blob/master/aws-services/data-services.md) (S3 facts)",
           "S3 as data lake: object storage with buckets and key prefixes; storage decoupled from compute so Athena, Glue, EMR, and SageMaker all read the same data",
           "Partitioning: Hive-style prefixes like `year=2026/month=10/` let query engines skip irrelevant data (partition pruning)",
           "Formats: `Parquet` (columnar, compressed, splittable — the analytics default) vs `CSV` (human-readable, slow, no schema) vs `JSONL` (semi-structured, one JSON object per line, common for streaming)",
@@ -439,6 +441,7 @@
         "time": "2h",
         "label": "New material",
         "steps": [
+          "📖 Read first: [bli55 transformation & feature engineering](https://github.com/bli55/notes-aws-machine-learning/tree/main/03-data-transformation-integrity-and-feature-engineering) (Glue/ETL sections) · [ccsusan data-services.md](https://github.com/ccsusan/aws-mla-certificate/blob/master/aws-services/data-services.md) (Glue components)",
           "`Data Catalog`: the central metadata store — databases and tables that point at S3 data, shared by Athena, EMR, and SageMaker",
           "`Crawlers`: inspect data sources, infer schema, and create or update Catalog tables; run on demand or on schedule; custom classifiers handle unusual formats",
           "`ETL jobs`: serverless Apache Spark (or Python shell) jobs for extract-transform-load; build visually in Glue Studio or in code",
@@ -649,6 +652,7 @@
         "time": "2h",
         "label": "New material",
         "steps": [
+          "📖 Read first: [bli55 data ingestion & storage](https://github.com/bli55/notes-aws-machine-learning/tree/main/02-data-ingestion-and-storage) (Athena/Kinesis sections) · [ccsusan data-services.md](https://github.com/ccsusan/aws-mla-certificate/blob/master/aws-services/data-services.md) (Athena, Kinesis, DMS)",
           "`Athena`: serverless SQL (Trino/Presto engine) directly on S3; no servers, pay per terabyte scanned; reads schema from the Data Catalog",
           "Cost control in Athena: Parquet format, partition pruning, column selection, and CTAS (CREATE TABLE AS SELECT) to materialize optimized tables",
           "`Workgroups`: isolate queries by team or workload with per-query data limits and cost tracking",
@@ -847,6 +851,7 @@
         "time": "1h",
         "label": "Day 1 recap: ML foundations",
         "steps": [
+          "📖 Re-read: [bli55 common/](https://github.com/bli55/notes-aws-machine-learning/tree/main/common) · [ccsusan core-ml/](https://github.com/ccsusan/aws-mla-certificate/tree/master/core-ml)",
           "From memory, write definitions for supervised vs unsupervised, bias, variance, overfitting, underfitting, and data leakage",
           "Redraw the bias/variance tradeoff from scratch and label where underfitting and overfitting sit",
           "Re-answer the Day 1 quiz; any miss gets a flashcard"
@@ -856,6 +861,7 @@
         "time": "1h",
         "label": "Day 2 recap: S3 for ML",
         "steps": [
+          "📖 Re-read: [bli55 02-data-ingestion-and-storage](https://github.com/bli55/notes-aws-machine-learning/tree/main/02-data-ingestion-and-storage) · [ccsusan data-services.md](https://github.com/ccsusan/aws-mla-certificate/blob/master/aws-services/data-services.md)",
           "From memory: Parquet vs CSV vs JSONL (one line each), what versioning protects, what lifecycle policies automate",
           "Sketch your Day 2 bucket layout including the Hive-style prefix and the lifecycle rule you created",
           "Re-answer the Day 2 quiz; any miss gets a flashcard"
@@ -865,6 +871,7 @@
         "time": "1h",
         "label": "Day 3 recap: Glue",
         "steps": [
+          "📖 Re-read: [bli55 03-transformation](https://github.com/bli55/notes-aws-machine-learning/tree/main/03-data-transformation-integrity-and-feature-engineering) · [ccsusan data-services.md](https://github.com/ccsusan/aws-mla-certificate/blob/master/aws-services/data-services.md)",
           "From memory: Data Catalog, crawler, ETL job, job bookmark, DataBrew — one sentence each",
           "Explain out loud when you would use a crawler vs an ETL job vs DataBrew",
           "Re-answer the Day 3 quiz; any miss gets a flashcard"
@@ -874,6 +881,7 @@
         "time": "1h",
         "label": "Day 4 recap: Athena, Kinesis, DMS",
         "steps": [
+          "📖 Re-read: [bli55 02-data-ingestion-and-storage](https://github.com/bli55/notes-aws-machine-learning/tree/main/02-data-ingestion-and-storage) (Athena/Kinesis) · [ccsusan data-services.md](https://github.com/ccsusan/aws-mla-certificate/blob/master/aws-services/data-services.md)",
           "From memory: how Athena is priced, Streams vs Firehose (one deciding factor), what DMS with CDC does",
           "Re-run your Athena comparison queries and confirm the partitioned Parquet table still scans less data",
           "Re-answer the Day 4 quiz; any miss gets a flashcard"
@@ -1114,6 +1122,7 @@
         "time": "2h",
         "label": "New material",
         "steps": [
+          "📖 Read first: [SageMaker Ground Truth docs](https://docs.aws.amazon.com/sagemaker/latest/dg/sms.html) (workforce options) · [bli55 SageMaker AI](https://github.com/bli55/notes-aws-machine-learning/tree/main/05-sagemaker-ai) · [ccsusan sagemaker-clarify.md](https://github.com/ccsusan/aws-mla-certificate/blob/master/sagemaker/sagemaker-clarify.md) (bias metrics)",
           "`Ground Truth`: managed data-labeling service — you define the task UI and annotation workflow, AWS orchestrates the workforce",
           "Workforce options: `private` (your own team — for sensitive/regulated data), `vendor` (pre-vetted third parties via AWS Marketplace), `public` (Amazon Mechanical Turk crowd — cheapest, for non-sensitive data)",
           "`Active learning`: a model pre-labels high-confidence items and humans verify only the uncertain ones — cuts labeling cost",
@@ -1325,6 +1334,7 @@
         "time": "2h",
         "label": "New material",
         "steps": [
+          "📖 Read first: [SageMaker Feature Store docs](https://docs.aws.amazon.com/sagemaker/latest/dg/feature-store.html) (online vs offline) · [bli55 feature engineering](https://github.com/bli55/notes-aws-machine-learning/tree/main/03-data-transformation-integrity-and-feature-engineering) · [ccsusan feature-engineering.md](https://github.com/ccsusan/aws-mla-certificate/blob/master/core-ml/feature-engineering.md)",
           "`SageMaker Feature Store`: managed repository for ML features — define once, reuse across training and inference",
           "`Online store`: low-latency key-value lookup for real-time inference (milliseconds)",
           "`Offline store`: S3-backed historical feature values for training and batch inference — supports point-in-time-correct joins",
@@ -1539,6 +1549,7 @@
         "time": "2h",
         "label": "New material",
         "steps": [
+          "📖 Read first: [SageMaker built-in algorithms](https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html) (use cases + hyperparameters) · [bli55 built-in algorithms](https://github.com/bli55/notes-aws-machine-learning/tree/main/06-sagemaker-built-in-algorithms) · [ccsusan aws-ml-algorithms.md](https://github.com/ccsusan/aws-mla-certificate/blob/master/aws-services/aws-ml-algorithms.md)",
           "`XGBoost`: gradient-boosted decision trees — the tabular-data workhorse for classification and regression; handles missing values; strong out-of-the-box performance",
           "`Linear Learner`: linear models for binary/multiclass classification and regression — fast, interpretable baseline for dense numeric features",
           "`K-means`: unsupervised clustering — partition data into k groups by Euclidean distance; you choose k; scale features first",
@@ -1742,6 +1753,7 @@
         "time": "2h",
         "label": "New material",
         "steps": [
+          "📖 Read first: [SageMaker built-in algorithms](https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html) (BlazingText, DeepAR, vision, KNN) · [bli55 built-in algorithms](https://github.com/bli55/notes-aws-machine-learning/tree/main/06-sagemaker-built-in-algorithms)",
           "`BlazingText`: Word2Vec embeddings plus supervised text classification — for text-as-input problems",
           "`DeepAR`: RNN-based probabilistic time-series forecasting across many related series — outputs uncertainty intervals, not just point forecasts",
           "`Image Classification`: assigns one label to a whole image; `Object Detection`: draws bounding boxes around each object instance",
@@ -1938,6 +1950,7 @@
         "time": "1h",
         "label": "Day 6 recap: Ground Truth, EMR, Clarify",
         "steps": [
+          "📖 Re-read: [Ground Truth docs](https://docs.aws.amazon.com/sagemaker/latest/dg/sms.html) · [bli55 SageMaker AI](https://github.com/bli55/notes-aws-machine-learning/tree/main/05-sagemaker-ai) · [ccsusan sagemaker-clarify.md](https://github.com/ccsusan/aws-mla-certificate/blob/master/sagemaker/sagemaker-clarify.md)",
           "From memory: the three Ground Truth workforces and when each fits, EMR vs Glue, pre-training vs post-training bias metrics",
           "Explain active learning out loud in 60 seconds",
           "Re-answer the Day 6 quiz; any miss gets a flashcard"
@@ -1947,6 +1960,7 @@
         "time": "1h",
         "label": "Day 7 recap: Feature Store and feature engineering",
         "steps": [
+          "📖 Re-read: [Feature Store docs](https://docs.aws.amazon.com/sagemaker/latest/dg/feature-store.html) · [bli55 feature engineering](https://github.com/bli55/notes-aws-machine-learning/tree/main/03-data-transformation-integrity-and-feature-engineering) · [ccsusan feature-engineering.md](https://github.com/ccsusan/aws-mla-certificate/blob/master/core-ml/feature-engineering.md)",
           "From memory: online vs offline store, standardization vs normalization, one-hot vs binning vs tokenization",
           "Re-run the Day 7 pipeline code and explain each transformer stage out loud",
           "Re-answer the Day 7 quiz; any miss gets a flashcard"
@@ -1956,6 +1970,7 @@
         "time": "1h",
         "label": "Day 8 recap: algorithms I",
         "steps": [
+          "📖 Re-read: [built-in algorithms docs](https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html) · [bli55 06](https://github.com/bli55/notes-aws-machine-learning/tree/main/06-sagemaker-built-in-algorithms) · [ccsusan aws-ml-algorithms.md](https://github.com/ccsusan/aws-mla-certificate/blob/master/aws-services/aws-ml-algorithms.md)",
           "From memory, 60 seconds each: XGBoost, Linear Learner, K-means, Factorization Machines — use case plus one key fact",
           "Sort these scenarios to algorithms: tabular churn, sparse CTR, unlabeled segmentation, fast linear baseline",
           "Re-answer the Day 8 quiz; any miss gets a flashcard"
@@ -1965,6 +1980,7 @@
         "time": "1h",
         "label": "Day 9 recap: algorithms II",
         "steps": [
+          "📖 Re-read: [built-in algorithms docs](https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html) (BlazingText, DeepAR) · [bli55 06](https://github.com/bli55/notes-aws-machine-learning/tree/main/06-sagemaker-built-in-algorithms)",
           "From memory: BlazingText, DeepAR, image classification vs object detection vs segmentation, KNN",
           "Re-run the Day 9 XGBoost lab with max_depth=12 and confirm the overfitting gap from memory first, then verify",
           "Re-answer the Day 9 quiz; any miss gets a flashcard"
