@@ -12,6 +12,7 @@
       {
         "label": "New material",
         "steps": [
+          "📖 Read first: [SageMaker training jobs](https://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works-training.html) (spot training, distributed) · [bli55 SageMaker AI](https://github.com/bli55/notes-aws-machine-learning/tree/main/05-sagemaker-ai) · [ccsusan sagemaker-training.md](https://github.com/ccsusan/aws-mla-certificate/blob/master/sagemaker/sagemaker-training.md)",
           "Study the instance-selection notes below: CPU (ml.m5, ml.c5) vs GPU (ml.p3, ml.g5) vs AWS silicon (ml.trn1 Trainium for training, ml.inf1 Inferentia for inference). Rule of thumb: match the instance to the workload, don't oversize.",
           "Learn managed spot training: `EnableManagedSpotTraining`, up to ~70% savings, interruptions are expected — so checkpointing (`checkpoint_s3_uri`) is mandatory, not optional.",
           "Learn distributed training: data parallelism (SageMaker distributed data-parallel — full model copy per worker, sharded data, averaged gradients) vs model parallelism (model split across workers, for models too large for one GPU).",
@@ -229,6 +230,7 @@
       {
         "label": "New material",
         "steps": [
+          "📖 Read first: [SageMaker automatic model tuning](https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning.html) (AMT strategies, early stopping, warm start) · [bli55 training & tuning](https://github.com/bli55/notes-aws-machine-learning/tree/main/04-model-training-tuning-and-evaluation) · [ccsusan sagemaker-training.md](https://github.com/ccsusan/aws-mla-certificate/blob/master/sagemaker/sagemaker-training.md)",
           "Learn Automatic Model Tuning (AMT): a tuning job launches many training jobs, each with different hyperparameter values sampled from ranges you define.",
           "Learn the objective metric: you specify a metric name plus Maximize/Minimize; SageMaker extracts it from training logs via a regex (`metric_definitions`). If the metric never appears in the logs, tuning is blind.",
           "Learn the three strategies: Bayesian (default — learns from completed runs to pick the next values; best when each run is expensive and you can afford few), Random (embarrassingly parallel, strong exploration baseline), Hyperband (adaptive — gives more resources to promising configs and kills poor ones early).",
@@ -438,6 +440,7 @@
       {
         "label": "New material",
         "steps": [
+          "📖 Read first: [bli55 training & evaluation](https://github.com/bli55/notes-aws-machine-learning/tree/main/04-model-training-tuning-and-evaluation) (metrics, confusion matrix, regularization) · [ccsusan model-training-evaluation.md](https://github.com/ccsusan/aws-mla-certificate/blob/master/core-ml/model-training-evaluation.md)",
           "Master the confusion matrix: TP, FP, TN, FN. Derive precision = TP/(TP+FP), recall = TP/(TP+FN), F1 = harmonic mean of the two. Know why accuracy lies on imbalanced data (99% accuracy can mean 'always predicts the majority class').",
           "Learn AUC-ROC: ranking quality across all thresholds; 0.5 = random, 1.0 = perfect. Know when it's preferred over a single-threshold metric.",
           "Learn regression metrics: RMSE (square root of mean squared error — punishes large errors), MAE (mean absolute error — robust to outliers), R² (variance explained).",
@@ -658,6 +661,7 @@
       {
         "label": "New material",
         "steps": [
+          "📖 Read first: [bli55 Bedrock](https://github.com/bli55/notes-aws-machine-learning/tree/main/13-bedrock) + [generative AI fundamentals](https://github.com/bli55/notes-aws-machine-learning/tree/main/07-generative-ai-model-fundamentals) · [Bedrock docs](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html)",
           "Learn Bedrock basics: serverless access to foundation models (Amazon Nova, Anthropic Claude, Meta Llama, Mistral, and others) through one AWS service — no infrastructure to manage. Note inference parameters: temperature, top_p, max tokens.",
           "Learn the Converse API: a single unified chat API (`converse`) across all Bedrock models — messages with roles, system prompts, and tool use — replacing per-model InvokeModel payload formats. Know when the exam expects 'Converse API' as the answer (model-agnostic chat).",
           "Learn the three Bedrock customization paths and their data: fine-tuning (labeled task data → adapts model to a specific task), continued pre-training (unlabeled domain corpus → teaches domain language/knowledge), distillation (large teacher's outputs train a smaller, cheaper, faster student).",
@@ -881,6 +885,7 @@
       {
         "label": "New material: agentic AI",
         "steps": [
+          "📖 Read first: [bli55 agentic AI](https://github.com/bli55/notes-aws-machine-learning/tree/main/14-agentic-ai) (agents, AgentCore) · [Bedrock AgentCore docs](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/what-is-bedrock-agentcore.html)",
           "Learn Bedrock Agents: an agent = FM + instructions + action groups + knowledge bases + guardrails. Action groups (Lambda functions or OpenAPI schemas) let the agent *do* things — query APIs, write tickets, run calculations — not just answer.",
           "Learn the agent loop: reason → act (call a tool) → observe the result → repeat (ReAct-style). Multi-step tool-calling workflows emerge from this loop, chosen dynamically at runtime — that's what separates agents from fixed pipelines.",
           "Learn agent memory: short-term memory (conversation history within a session) vs long-term memory (facts and preferences persisted across sessions).",
@@ -1048,6 +1053,7 @@
       {
         "label": "New material",
         "steps": [
+          "📖 Read first: [SageMaker inference options](https://docs.aws.amazon.com/sagemaker/latest/dg/deploy-model.html) (real-time vs batch vs async vs serverless) · [bli55 MLOps](https://github.com/bli55/notes-aws-machine-learning/tree/main/09-machine-learning-operations) · [ccsusan mlops/](https://github.com/ccsusan/aws-mla-certificate/tree/master/mlops)",
           "Learn real-time inference: persistent HTTPS endpoint, low latency, production variants behind it; billed per instance-hour for as long as it exists — the #1 surprise-bill source.",
           "Learn batch transform: offline scoring of S3 datasets, no persistent endpoint, mini-batches; most cost-effective for large scheduled scoring jobs.",
           "Learn asynchronous inference: payloads up to 1 GB, processing up to 1 hour, results to S3 with SNS notification; for near-real-time workloads that don't need an immediate response.",
@@ -1265,6 +1271,7 @@
       {
         "label": "New material",
         "steps": [
+          "📖 Read first: [SageMaker deployment docs](https://docs.aws.amazon.com/sagemaker/latest/dg/deploy-model.html) (production variants: blue/green, canary, A/B; auto-scaling) · [bli55 MLOps](https://github.com/bli55/notes-aws-machine-learning/tree/main/09-machine-learning-operations) · [ccsusan mlops/](https://github.com/ccsusan/aws-mla-certificate/tree/master/mlops)",
           "Learn production variants: multiple model versions behind one endpoint with traffic weights — the mechanism all three rollout strategies use.",
           "Learn blue/green: deploy the new model as a second variant, shift 100% traffic at once, instant rollback by shifting back. Safest for fast rollback.",
           "Learn canary: route a small percentage (e.g., 5%) to the new variant, monitor metrics, ramp gradually. Safest for catching problems early.",
@@ -1471,6 +1478,7 @@
       {
         "label": "New material",
         "steps": [
+          "📖 Read first: [Model Registry](https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry.html) · [Model Cards](https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html) · [JumpStart](https://docs.aws.amazon.com/sagemaker/latest/dg/studio-jumpstart.html) · [bli55 MLOps](https://github.com/bli55/notes-aws-machine-learning/tree/main/09-machine-learning-operations)",
           "Learn the Model Registry: a versioned catalog of models (model groups → versions). Each version carries metrics, artifacts, and lineage. Approval workflow: `PendingManualApproval` → `Approved` or `Rejected`. Pipelines gate deployment on approval — unapproved models don't ship.",
           "Learn Model Cards: standardized documentation for a model — intended uses, training data, evaluation results, limitations, ethical considerations. Written for stakeholders, auditors, and future-you, not just engineers.",
           "Learn lineage tracking: every model version links back to its training job, dataset, and code — the audit trail that answers 'how was this model built?'",
@@ -1665,6 +1673,7 @@
       {
         "label": "New material",
         "steps": [
+          "📖 Read first: [SageMaker Pipelines](https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines.html) (step types, Condition pattern) · [bli55 MLOps](https://github.com/bli55/notes-aws-machine-learning/tree/main/09-machine-learning-operations) · [ccsusan mlops/](https://github.com/ccsusan/aws-mla-certificate/tree/master/mlops)",
           "Learn SageMaker Pipelines: ML-native workflow orchestration. Step types: Processing (data prep), Training, Evaluation, RegisterModel (to the registry), Condition (gate on a metric, e.g., accuracy ≥ threshold), Deploy/CreateEndpoint. Pipeline definitions are versioned; every execution is tracked.",
           "Learn the Condition step deeply: it's how 'only deploy if the model is good enough' is implemented — the exam tests this pattern directly.",
           "Learn Step Functions: general-purpose serverless orchestration across AWS services, with SageMaker service integrations. Use it when the workflow spans non-ML steps (e.g., notify Slack, update DynamoDB, call Lambda) — Pipelines is ML-native, Step Functions is general.",
@@ -1858,6 +1867,7 @@
       {
         "label": "Review: endpoints (Day 16)",
         "steps": [
+          "📖 Re-read: [inference options docs](https://docs.aws.amazon.com/sagemaker/latest/dg/deploy-model.html) · [bli55 MLOps](https://github.com/bli55/notes-aws-machine-learning/tree/main/09-machine-learning-operations)",
           "Closed-note: rewrite the inference decision table (real-time / batch / async / serverless) with one scenario each. Check against Day 16 notes; fix gaps.",
           "Recite the billing model of each option out loud. Where is the cost trap in each?",
           "Confirm in the AWS console: zero endpoints running, zero training jobs running. Cost hygiene is part of the review."
@@ -1867,6 +1877,7 @@
       {
         "label": "Review: deployment strategies (Day 17)",
         "steps": [
+          "📖 Re-read: [deployment docs](https://docs.aws.amazon.com/sagemaker/latest/dg/deploy-model.html) (variants, auto-scaling) · [bli55 MLOps](https://github.com/bli55/notes-aws-machine-learning/tree/main/09-machine-learning-operations)",
           "Closed-note: define blue/green, canary, and A/B in one sentence each, then state the exam discriminator for each.",
           "Sketch a canary deployment with production variants and weights from memory; add the auto-scaling policy (metric, min/max).",
           "Explain multi-model endpoints and inference pipelines to an imaginary interviewer in under 2 minutes each."
@@ -1876,6 +1887,7 @@
       {
         "label": "Review: registry & JumpStart (Day 18)",
         "steps": [
+          "📖 Re-read: [Model Registry](https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry.html) · [Model Cards](https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html) · [JumpStart](https://docs.aws.amazon.com/sagemaker/latest/dg/studio-jumpstart.html)",
           "Closed-note: write the lifecycle order (train → register → document → approve → deploy) and what artifact each step produces.",
           "One sentence each: what the registry tracks, what a Model Card documents, what lineage answers, what JumpStart is for.",
           "List the registry approval statuses and which one gates production deployment."
@@ -1885,6 +1897,7 @@
       {
         "label": "Review: orchestration (Day 19)",
         "steps": [
+          "📖 Re-read: [Pipelines docs](https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines.html) · [bli55 MLOps](https://github.com/bli55/notes-aws-machine-learning/tree/main/09-machine-learning-operations)",
           "Closed-note: draw the minimal pipeline DAG (processing → training → evaluation → condition → register → deploy) with step types labeled.",
           "State the Pipelines-vs-Step-Functions decision rule and the four retraining triggers from memory.",
           "Write an EventBridge cron use case and an event-driven use case, one line each."
