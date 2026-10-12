@@ -11,7 +11,9 @@
   }
   // Inline code spans: `code` -> <code>code</code> (safe: escaped first)
   function md(s) {
-    return esc(s).replace(/`([^`]+)`/g, "<code>$1</code>");
+    return esc(s)
+      .replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>')
+      .replace(/`([^`]+)`/g, "<code>$1</code>");
   }
 
   function load() {
