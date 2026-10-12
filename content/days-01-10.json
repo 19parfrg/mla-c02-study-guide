@@ -148,7 +148,7 @@
       },
       {
         "label": "ccsusan MLA notes",
-        "url": "https://github.com/ccsusan/aws-mla-certification-notes",
+        "url": "https://github.com/ccsusan/aws-mla-certificate",
         "note": "Quick-reference pass — core-ml/ folder for definitions."
       },
       {
@@ -347,7 +347,7 @@
       },
       {
         "label": "ccsusan MLA notes",
-        "url": "https://github.com/ccsusan/aws-mla-certification-notes",
+        "url": "https://github.com/ccsusan/aws-mla-certificate",
         "note": "data-services.md quick reference for S3 facts."
       },
       {
@@ -557,7 +557,7 @@
       },
       {
         "label": "ccsusan MLA notes",
-        "url": "https://github.com/ccsusan/aws-mla-certification-notes",
+        "url": "https://github.com/ccsusan/aws-mla-certificate",
         "note": "data-services.md quick reference for Glue components."
       },
       {
@@ -763,7 +763,7 @@
       },
       {
         "label": "ccsusan MLA notes",
-        "url": "https://github.com/ccsusan/aws-mla-certification-notes",
+        "url": "https://github.com/ccsusan/aws-mla-certificate",
         "note": "data-services.md quick reference for Athena, Kinesis, DMS."
       },
       {
@@ -962,7 +962,7 @@
     "resources": [
       {
         "label": "ccsusan MLA notes",
-        "url": "https://github.com/ccsusan/aws-mla-certification-notes",
+        "url": "https://github.com/ccsusan/aws-mla-certificate",
         "note": "Cheat sheet — the fastest full-week refresher."
       },
       {
@@ -1238,7 +1238,7 @@
       },
       {
         "label": "ccsusan MLA notes",
-        "url": "https://github.com/ccsusan/aws-mla-certification-notes",
+        "url": "https://github.com/ccsusan/aws-mla-certificate",
         "note": "Quick reference for labeling and bias-detection facts."
       }
     ],
@@ -1452,7 +1452,7 @@
       },
       {
         "label": "ccsusan MLA notes",
-        "url": "https://github.com/ccsusan/aws-mla-certification-notes",
+        "url": "https://github.com/ccsusan/aws-mla-certificate",
         "note": "feature-engineering.md quick reference."
       }
     ],
@@ -1655,7 +1655,7 @@
       },
       {
         "label": "ccsusan MLA notes",
-        "url": "https://github.com/ccsusan/aws-mla-certification-notes",
+        "url": "https://github.com/ccsusan/aws-mla-certificate",
         "note": "aws-ml-algorithms.md covering the built-in algorithm list."
       }
     ],
@@ -2058,7 +2058,7 @@
       },
       {
         "label": "ccsusan MLA notes",
-        "url": "https://github.com/ccsusan/aws-mla-certification-notes",
+        "url": "https://github.com/ccsusan/aws-mla-certificate",
         "note": "Cheat sheet — the fastest full-week refresher."
       },
       {
