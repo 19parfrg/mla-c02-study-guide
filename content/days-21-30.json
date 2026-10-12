@@ -198,7 +198,7 @@
       {
         "label": "ccsusan notes",
         "note": "mlops-monitoring.md quick reference and cheat-sheet tables.",
-        "url": "https://github.com/ccsusan/aws-mla-certification-notes"
+        "url": "https://github.com/ccsusan/aws-mla-certificate"
       },
       {
         "label": "SageMaker docs",
@@ -413,7 +413,7 @@
       {
         "label": "ccsusan notes",
         "note": "mlops-cicd.md plus the A2I section of aws-ai-services.md.",
-        "url": "https://github.com/ccsusan/aws-mla-certification-notes"
+        "url": "https://github.com/ccsusan/aws-mla-certificate"
       },
       {
         "label": "AWS Skill Builder",
@@ -615,7 +615,7 @@
       {
         "label": "ccsusan notes",
         "note": "security.md and security-encryption.md — roles, KMS, and SSE-S3 vs SSE-KMS tables.",
-        "url": "https://github.com/ccsusan/aws-mla-certification-notes"
+        "url": "https://github.com/ccsusan/aws-mla-certificate"
       },
       {
         "label": "bli55 notes",
@@ -824,7 +824,7 @@
       {
         "label": "ccsusan notes",
         "note": "security-network.md — SageMaker VPC config, security groups, endpoints.",
-        "url": "https://github.com/ccsusan/aws-mla-certification-notes"
+        "url": "https://github.com/ccsusan/aws-mla-certificate"
       },
       {
         "label": "bli55 notes",
@@ -1090,7 +1090,7 @@
       {
         "label": "ccsusan cheat sheet",
         "note": "Quick tables covering the week's terms; read it as a self-test.",
-        "url": "https://github.com/ccsusan/aws-mla-certification-notes"
+        "url": "https://github.com/ccsusan/aws-mla-certificate"
       },
       {
         "label": "bli55 notes",
@@ -1266,7 +1266,7 @@
       {
         "label": "ccsusan cheat sheet",
         "note": "The primary triage document — read it as a self-test, row by row.",
-        "url": "https://github.com/ccsusan/aws-mla-certification-notes"
+        "url": "https://github.com/ccsusan/aws-mla-certificate"
       },
       {
         "label": "MLA-C02 exam guide (PDF)",
@@ -1449,7 +1449,7 @@
       {
         "label": "ccsusan notes",
         "note": "Quick-reference tables for fast re-reads.",
-        "url": "https://github.com/ccsusan/aws-mla-certification-notes"
+        "url": "https://github.com/ccsusan/aws-mla-certificate"
       }
     ],
     "title": "Weak-Area Repair Day",
@@ -1618,7 +1618,7 @@
       {
         "label": "ccsusan cheat sheet",
         "note": "Fast lookup while writing one-line rules for each miss.",
-        "url": "https://github.com/ccsusan/aws-mla-certification-notes"
+        "url": "https://github.com/ccsusan/aws-mla-certificate"
       },
       {
         "label": "AWS Skill Builder",
@@ -1783,7 +1783,7 @@
       {
         "label": "ccsusan cheat sheet",
         "note": "Recognition-only review for Day 30's light list.",
-        "url": "https://github.com/ccsusan/aws-mla-certification-notes"
+        "url": "https://github.com/ccsusan/aws-mla-certificate"
       },
       {
         "label": "AWS Skill Builder",
