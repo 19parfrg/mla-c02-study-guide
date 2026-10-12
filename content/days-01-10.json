@@ -48,7 +48,7 @@
         "time": "1h",
         "label": "Practice + teach-it-back",
         "steps": [
-          "Answer 20 practice questions on today's topics from the ihatesea69 hands-on labs repo",
+          "Answer 20 practice questions on today's topics from the tracker's quiz and your flagged-question review",
           "Close everything and write one paragraph from memory explaining the bias/variance tradeoff in your own words",
           "Check it against your notes and fix what you missed — the gaps become tomorrow's review list"
         ]
@@ -102,25 +102,95 @@
       }
     ],
     "keyTerms": [
-      {"term": "Supervised learning", "def": "Learning a mapping from inputs to known labeled outputs (classification or regression)."},
-      {"term": "Unsupervised learning", "def": "Finding structure in unlabeled data, e.g. clustering or dimensionality reduction."},
-      {"term": "Overfitting", "def": "Model memorizes training noise: high train score, poor validation/test score (high variance)."},
-      {"term": "Underfitting", "def": "Model too simple to capture patterns: poor scores on train and validation (high bias)."},
-      {"term": "Bias", "def": "Error from oversimplified assumptions; systematic miss of real patterns."},
-      {"term": "Variance", "def": "Error from sensitivity to training-data fluctuations; instability across datasets."},
-      {"term": "Validation set", "def": "Held-out data used to tune hyperparameters and compare models during development."},
-      {"term": "Data leakage", "def": "Test information contaminating training, producing optimistically invalid results."}
+      {
+        "term": "Supervised learning",
+        "def": "Learning a mapping from inputs to known labeled outputs (classification or regression)."
+      },
+      {
+        "term": "Unsupervised learning",
+        "def": "Finding structure in unlabeled data, e.g. clustering or dimensionality reduction."
+      },
+      {
+        "term": "Overfitting",
+        "def": "Model memorizes training noise: high train score, poor validation/test score (high variance)."
+      },
+      {
+        "term": "Underfitting",
+        "def": "Model too simple to capture patterns: poor scores on train and validation (high bias)."
+      },
+      {
+        "term": "Bias",
+        "def": "Error from oversimplified assumptions; systematic miss of real patterns."
+      },
+      {
+        "term": "Variance",
+        "def": "Error from sensitivity to training-data fluctuations; instability across datasets."
+      },
+      {
+        "term": "Validation set",
+        "def": "Held-out data used to tune hyperparameters and compare models during development."
+      },
+      {
+        "term": "Data leakage",
+        "def": "Test information contaminating training, producing optimistically invalid results."
+      }
     ],
     "resources": [
-      {"label": "MLA-C02 exam guide (PDF)", "url": "https://docs.aws.amazon.com/pdfs/aws-certification/latest/machine-learning-engineer-associate-02/machine-learning-engineer-associate-02.pdf", "note": "Authoritative scope: domain weights and task statements."},
-      {"label": "bli55 AWS ML notes", "url": "https://github.com/bli55/notes-aws-machine-learning", "note": "Main read for today — ML fundamentals in the common/ folder."},
-      {"label": "ccsusan MLA notes", "url": "https://github.com/ccsusan/aws-mla-certification-notes", "note": "Quick-reference pass — core-ml/ folder for definitions."},
-      {"label": "AWS Skill Builder", "url": "https://skillbuilder.aws", "note": "Official free exam-prep plan for MLA-C02."}
+      {
+        "label": "MLA-C02 exam guide (PDF)",
+        "url": "https://docs.aws.amazon.com/pdfs/aws-certification/latest/machine-learning-engineer-associate-02/machine-learning-engineer-associate-02.pdf",
+        "note": "Authoritative scope: domain weights and task statements."
+      },
+      {
+        "label": "bli55 AWS ML notes",
+        "url": "https://github.com/bli55/notes-aws-machine-learning",
+        "note": "Main read for today — ML fundamentals in the common/ folder."
+      },
+      {
+        "label": "ccsusan MLA notes",
+        "url": "https://github.com/ccsusan/aws-mla-certification-notes",
+        "note": "Quick-reference pass — core-ml/ folder for definitions."
+      },
+      {
+        "label": "AWS Skill Builder",
+        "url": "https://skillbuilder.aws",
+        "note": "Official free exam-prep plan for MLA-C02."
+      }
     ],
     "quiz": [
-      {"q": "A model scores 99% accuracy on its training data but 72% on a held-out test set. Which condition does this describe?", "options": ["Underfitting", "Overfitting", "Data leakage", "High bias"], "answer": 1, "why": "Huge train/test gap with high training accuracy is the textbook signature of overfitting (high variance)."},
-      {"q": "You split data 70/15/15 into train/validation/test. Which statement is true?", "options": ["Tune hyperparameters on the test set for the final estimate", "Tune hyperparameters and compare models on validation; use the test set once for a final unbiased estimate", "The validation set is only needed for deep learning", "Test data can be folded back into training after tuning"], "answer": 1, "why": "Validation guides tuning; the test set stays locked until the end for an unbiased estimate."},
-      {"q": "Which of these is a supervised learning task?", "options": ["K-means clustering on unlabeled customers", "PCA on sensor data", "Predicting house prices from labeled historical sales", "Finding anomalies with no labels"], "answer": 2, "why": "Supervised learning needs labeled examples — historical sales with known prices are labels."}
+      {
+        "q": "A model scores 99% accuracy on its training data but 72% on a held-out test set. Which condition does this describe?",
+        "options": [
+          "Underfitting",
+          "Overfitting",
+          "Data leakage",
+          "High bias"
+        ],
+        "answer": 1,
+        "why": "Huge train/test gap with high training accuracy is the textbook signature of overfitting (high variance)."
+      },
+      {
+        "q": "You split data 70/15/15 into train/validation/test. Which statement is true?",
+        "options": [
+          "Tune hyperparameters on the test set for the final estimate",
+          "Tune hyperparameters and compare models on validation; use the test set once for a final unbiased estimate",
+          "The validation set is only needed for deep learning",
+          "Test data can be folded back into training after tuning"
+        ],
+        "answer": 1,
+        "why": "Validation guides tuning; the test set stays locked until the end for an unbiased estimate."
+      },
+      {
+        "q": "Which of these is a supervised learning task?",
+        "options": [
+          "K-means clustering on unlabeled customers",
+          "PCA on sensor data",
+          "Predicting house prices from labeled historical sales",
+          "Finding anomalies with no labels"
+        ],
+        "answer": 2,
+        "why": "Supervised learning needs labeled examples — historical sales with known prices are labels."
+      }
     ]
   },
   {
@@ -173,7 +243,7 @@
         "time": "1h",
         "label": "Practice + teach-it-back",
         "steps": [
-          "Answer 20 practice questions on S3 and data formats from the ihatesea69 labs repo",
+          "Answer 20 practice questions on S3 and data formats from the tracker's quiz and your flagged-question review",
           "Out loud, explain to an imaginary interviewer why a team would store training data as Parquet in S3 instead of CSV — cover cost, query speed, and schema",
           "Write down every stall; those terms go on tomorrow's warm-up list"
         ]
@@ -236,26 +306,112 @@
       }
     ],
     "keyTerms": [
-      {"term": "Data lake", "def": "Centralized S3-based repository storing raw and processed data for analytics and ML."},
-      {"term": "Parquet", "def": "Columnar, compressed file format ideal for analytics queries and ML training data."},
-      {"term": "Partitioning", "def": "Organizing S3 keys by attributes (e.g. date) so queries skip irrelevant data."},
-      {"term": "Versioning", "def": "S3 feature preserving every variant of an object for recovery and reproducibility."},
-      {"term": "Lifecycle policy", "def": "Rules that automatically transition or expire objects to optimize cost."},
-      {"term": "SSE-KMS", "def": "S3 server-side encryption using customer-controlled KMS keys with auditing."},
-      {"term": "S3 Select", "def": "In-place SQL filtering of a single S3 object without downloading it."},
-      {"term": "Prefix", "def": "The key-namespace grouping in S3 used to simulate folders and partitions."}
+      {
+        "term": "Data lake",
+        "def": "Centralized S3-based repository storing raw and processed data for analytics and ML."
+      },
+      {
+        "term": "Parquet",
+        "def": "Columnar, compressed file format ideal for analytics queries and ML training data."
+      },
+      {
+        "term": "Partitioning",
+        "def": "Organizing S3 keys by attributes (e.g. date) so queries skip irrelevant data."
+      },
+      {
+        "term": "Versioning",
+        "def": "S3 feature preserving every variant of an object for recovery and reproducibility."
+      },
+      {
+        "term": "Lifecycle policy",
+        "def": "Rules that automatically transition or expire objects to optimize cost."
+      },
+      {
+        "term": "SSE-KMS",
+        "def": "S3 server-side encryption using customer-controlled KMS keys with auditing."
+      },
+      {
+        "term": "S3 Select",
+        "def": "In-place SQL filtering of a single S3 object without downloading it."
+      },
+      {
+        "term": "Prefix",
+        "def": "The key-namespace grouping in S3 used to simulate folders and partitions."
+      }
     ],
     "resources": [
-      {"label": "bli55 AWS ML notes", "url": "https://github.com/bli55/notes-aws-machine-learning", "note": "Data-services sections covering S3 patterns for ML."},
-      {"label": "ccsusan MLA notes", "url": "https://github.com/ccsusan/aws-mla-certification-notes", "note": "data-services.md quick reference for S3 facts."},
-      {"label": "MLA-C02 exam guide (web)", "url": "https://docs.aws.amazon.com/aws-certification/latest/machine-learning-engineer-associate-02/machine-learning-engineer-associate-02.html", "note": "Domain 1 task statements mentioning data lakes and formats."}
+      {
+        "label": "bli55 AWS ML notes",
+        "url": "https://github.com/bli55/notes-aws-machine-learning",
+        "note": "Data-services sections covering S3 patterns for ML."
+      },
+      {
+        "label": "ccsusan MLA notes",
+        "url": "https://github.com/ccsusan/aws-mla-certification-notes",
+        "note": "data-services.md quick reference for S3 facts."
+      },
+      {
+        "label": "MLA-C02 exam guide (web)",
+        "url": "https://docs.aws.amazon.com/aws-certification/latest/machine-learning-engineer-associate-02/machine-learning-engineer-associate-02.html",
+        "note": "Domain 1 task statements mentioning data lakes and formats."
+      }
     ],
     "quiz": [
-      {"q": "You need to run ad-hoc SQL over 500 GB of application logs in S3. Which format minimizes Athena scan cost?", "options": ["CSV", "Gzipped JSONL", "Parquet with Snappy compression", "Plain-text TSV"], "answer": 2, "why": "Parquet is columnar and compressed, so Athena scans far less data — and Athena bills per byte scanned."},
-      {"q": "A lifecycle policy transitions objects to Glacier after 90 days and expires noncurrent versions after 30 days. Its main purpose is to...", "options": ["Speed up queries", "Reduce storage cost automatically", "Enable cross-region replication", "Encrypt data at rest"], "answer": 1, "why": "Lifecycle policies automate cost optimization by moving aging data to cheaper tiers and cleaning up old versions."},
-      {"q": "A teammate accidentally overwrites a training dataset in S3. Which feature lets you recover the previous version?", "options": ["Lifecycle policy", "Versioning", "S3 Select", "Bucket policy"], "answer": 1, "why": "Versioning keeps every variant of an object, so overwrites and deletes are recoverable."},
-      {"q": "Data is stored as s3://bucket/events/year=2026/month=10/day=07/. What is the main benefit for Athena queries filtered by date?", "options": ["Stronger encryption", "Partition pruning — Athena skips irrelevant prefixes", "Automatic schema inference", "Faster uploads"], "answer": 1, "why": "Hive-style partitions let Athena prune whole prefixes and scan only the data the query needs."},
-      {"q": "Which statement about S3 is true?", "options": ["S3 is block storage like EBS", "S3 is object storage with effectively unlimited scale", "S3 requires a provisioned cluster", "S3 objects are limited to 1 GB"], "answer": 1, "why": "S3 is object storage; individual objects can be up to 5 TB and buckets scale without provisioning."}
+      {
+        "q": "You need to run ad-hoc SQL over 500 GB of application logs in S3. Which format minimizes Athena scan cost?",
+        "options": [
+          "CSV",
+          "Gzipped JSONL",
+          "Parquet with Snappy compression",
+          "Plain-text TSV"
+        ],
+        "answer": 2,
+        "why": "Parquet is columnar and compressed, so Athena scans far less data — and Athena bills per byte scanned."
+      },
+      {
+        "q": "A lifecycle policy transitions objects to Glacier after 90 days and expires noncurrent versions after 30 days. Its main purpose is to...",
+        "options": [
+          "Speed up queries",
+          "Reduce storage cost automatically",
+          "Enable cross-region replication",
+          "Encrypt data at rest"
+        ],
+        "answer": 1,
+        "why": "Lifecycle policies automate cost optimization by moving aging data to cheaper tiers and cleaning up old versions."
+      },
+      {
+        "q": "A teammate accidentally overwrites a training dataset in S3. Which feature lets you recover the previous version?",
+        "options": [
+          "Lifecycle policy",
+          "Versioning",
+          "S3 Select",
+          "Bucket policy"
+        ],
+        "answer": 1,
+        "why": "Versioning keeps every variant of an object, so overwrites and deletes are recoverable."
+      },
+      {
+        "q": "Data is stored as s3://bucket/events/year=2026/month=10/day=07/. What is the main benefit for Athena queries filtered by date?",
+        "options": [
+          "Stronger encryption",
+          "Partition pruning — Athena skips irrelevant prefixes",
+          "Automatic schema inference",
+          "Faster uploads"
+        ],
+        "answer": 1,
+        "why": "Hive-style partitions let Athena prune whole prefixes and scan only the data the query needs."
+      },
+      {
+        "q": "Which statement about S3 is true?",
+        "options": [
+          "S3 is block storage like EBS",
+          "S3 is object storage with effectively unlimited scale",
+          "S3 requires a provisioned cluster",
+          "S3 objects are limited to 1 GB"
+        ],
+        "answer": 1,
+        "why": "S3 is object storage; individual objects can be up to 5 TB and buckets scale without provisioning."
+      }
     ]
   },
   {
@@ -306,7 +462,7 @@
         "time": "1h",
         "label": "Practice + teach-it-back",
         "steps": [
-          "Answer 20 practice questions on Glue from the ihatesea69 labs repo",
+          "Answer 20 practice questions on Glue from the tracker's quiz and your flagged-question review",
           "Out loud: explain the difference between what a crawler does and what an ETL job does — and when you need each",
           "Log every stall for tomorrow's warm-up"
         ]
@@ -360,26 +516,112 @@
       }
     ],
     "keyTerms": [
-      {"term": "Data Catalog", "def": "Glue's central metadata store of databases/tables pointing at S3 data."},
-      {"term": "Crawler", "def": "Glue component that infers schema from data sources and registers Catalog tables."},
-      {"term": "ETL job", "def": "Serverless Spark job that extracts, transforms, and loads data."},
-      {"term": "Job bookmark", "def": "Glue state tracking that makes recurring jobs process only new data."},
-      {"term": "DataBrew", "def": "Visual no-code data preparation and profiling tool with 250+ transforms."},
-      {"term": "Glue Studio", "def": "Visual interface for building Glue ETL jobs without writing Spark code."},
-      {"term": "Classifier", "def": "Crawler component that recognizes a data format to infer schema correctly."},
-      {"term": "Trigger", "def": "Glue mechanism that starts jobs on a schedule or on events."}
+      {
+        "term": "Data Catalog",
+        "def": "Glue's central metadata store of databases/tables pointing at S3 data."
+      },
+      {
+        "term": "Crawler",
+        "def": "Glue component that infers schema from data sources and registers Catalog tables."
+      },
+      {
+        "term": "ETL job",
+        "def": "Serverless Spark job that extracts, transforms, and loads data."
+      },
+      {
+        "term": "Job bookmark",
+        "def": "Glue state tracking that makes recurring jobs process only new data."
+      },
+      {
+        "term": "DataBrew",
+        "def": "Visual no-code data preparation and profiling tool with 250+ transforms."
+      },
+      {
+        "term": "Glue Studio",
+        "def": "Visual interface for building Glue ETL jobs without writing Spark code."
+      },
+      {
+        "term": "Classifier",
+        "def": "Crawler component that recognizes a data format to infer schema correctly."
+      },
+      {
+        "term": "Trigger",
+        "def": "Glue mechanism that starts jobs on a schedule or on events."
+      }
     ],
     "resources": [
-      {"label": "bli55 AWS ML notes", "url": "https://github.com/bli55/notes-aws-machine-learning", "note": "Glue crawler and ETL sections with exam framing."},
-      {"label": "ccsusan MLA notes", "url": "https://github.com/ccsusan/aws-mla-certification-notes", "note": "data-services.md quick reference for Glue components."},
-      {"label": "MLA-C02 exam guide (PDF)", "url": "https://docs.aws.amazon.com/pdfs/aws-certification/latest/machine-learning-engineer-associate-02/machine-learning-engineer-associate-02.pdf", "note": "Domain 1 tasks on data ingestion and transformation."}
+      {
+        "label": "bli55 AWS ML notes",
+        "url": "https://github.com/bli55/notes-aws-machine-learning",
+        "note": "Glue crawler and ETL sections with exam framing."
+      },
+      {
+        "label": "ccsusan MLA notes",
+        "url": "https://github.com/ccsusan/aws-mla-certification-notes",
+        "note": "data-services.md quick reference for Glue components."
+      },
+      {
+        "label": "MLA-C02 exam guide (PDF)",
+        "url": "https://docs.aws.amazon.com/pdfs/aws-certification/latest/machine-learning-engineer-associate-02/machine-learning-engineer-associate-02.pdf",
+        "note": "Domain 1 tasks on data ingestion and transformation."
+      }
     ],
     "quiz": [
-      {"q": "What is the primary job of a Glue crawler?", "options": ["Move data from S3 to Redshift", "Infer schema from data sources and create or update tables in the Data Catalog", "Train ML models on cataloged data", "Compress Parquet files"], "answer": 1, "why": "Crawlers inspect data, infer schema, and register tables — they do not move or transform data."},
-      {"q": "A Glue ETL job runs nightly over S3 clickstream data, but only new files since the last run should be processed. Which feature handles this?", "options": ["Job bookmarks", "Crawler schedule", "DataBrew recipe", "Trigger chaining"], "answer": 0, "why": "Job bookmarks track processed data so each run handles only new arrivals."},
-      {"q": "A data analyst with no Spark experience needs to visually profile and clean a dataset. Which service fits best?", "options": ["Glue ETL with PySpark", "EMR", "Glue DataBrew", "Athena"], "answer": 2, "why": "DataBrew is the visual, no-code preparation tool with 250+ built-in transforms."},
-      {"q": "Where do Glue crawler results get stored so Athena and SageMaker can use them?", "options": ["In the ETL job script", "In the Glue Data Catalog", "In a DynamoDB table", "In CloudWatch Logs"], "answer": 1, "why": "The Data Catalog is the shared metadata store consumed by Athena, EMR, SageMaker, and others."},
-      {"q": "Glue ETL jobs run on which engine?", "options": ["Presto", "Serverless Apache Spark", "Flink only", "Hadoop MapReduce exclusively"], "answer": 1, "why": "Glue provides serverless Spark (and Python shell) jobs with no cluster to manage."}
+      {
+        "q": "What is the primary job of a Glue crawler?",
+        "options": [
+          "Move data from S3 to Redshift",
+          "Infer schema from data sources and create or update tables in the Data Catalog",
+          "Train ML models on cataloged data",
+          "Compress Parquet files"
+        ],
+        "answer": 1,
+        "why": "Crawlers inspect data, infer schema, and register tables — they do not move or transform data."
+      },
+      {
+        "q": "A Glue ETL job runs nightly over S3 clickstream data, but only new files since the last run should be processed. Which feature handles this?",
+        "options": [
+          "Job bookmarks",
+          "Crawler schedule",
+          "DataBrew recipe",
+          "Trigger chaining"
+        ],
+        "answer": 0,
+        "why": "Job bookmarks track processed data so each run handles only new arrivals."
+      },
+      {
+        "q": "A data analyst with no Spark experience needs to visually profile and clean a dataset. Which service fits best?",
+        "options": [
+          "Glue ETL with PySpark",
+          "EMR",
+          "Glue DataBrew",
+          "Athena"
+        ],
+        "answer": 2,
+        "why": "DataBrew is the visual, no-code preparation tool with 250+ built-in transforms."
+      },
+      {
+        "q": "Where do Glue crawler results get stored so Athena and SageMaker can use them?",
+        "options": [
+          "In the ETL job script",
+          "In the Glue Data Catalog",
+          "In a DynamoDB table",
+          "In CloudWatch Logs"
+        ],
+        "answer": 1,
+        "why": "The Data Catalog is the shared metadata store consumed by Athena, EMR, SageMaker, and others."
+      },
+      {
+        "q": "Glue ETL jobs run on which engine?",
+        "options": [
+          "Presto",
+          "Serverless Apache Spark",
+          "Flink only",
+          "Hadoop MapReduce exclusively"
+        ],
+        "answer": 1,
+        "why": "Glue provides serverless Spark (and Python shell) jobs with no cluster to manage."
+      }
     ]
   },
   {
@@ -430,7 +672,7 @@
         "time": "1h",
         "label": "Practice + teach-it-back",
         "steps": [
-          "Answer 20 practice questions on Athena, Kinesis, and DMS from the ihatesea69 labs repo",
+          "Answer 20 practice questions on Athena, Kinesis, and DMS from the tracker's quiz and your flagged-question review",
           "Out loud: a teammate asks whether to use Kinesis Data Streams or Firehose for click events landing in S3 — give the decision and the reasoning",
           "Log every stall for the Day 5 review"
         ]
@@ -484,25 +726,108 @@
       }
     ],
     "keyTerms": [
-      {"term": "Athena", "def": "Serverless SQL query service over S3 data, priced per terabyte scanned."},
-      {"term": "CTAS", "def": "CREATE TABLE AS SELECT — materializes a query result as a new (often optimized) table."},
-      {"term": "Workgroup", "def": "Athena construct isolating queries with cost and access controls per team."},
-      {"term": "Kinesis Data Streams", "def": "Real-time streaming with shards and custom consumers; supports replay."},
-      {"term": "Firehose", "def": "Fully managed stream delivery to S3/Redshift/OpenSearch with batching and compression."},
-      {"term": "DMS", "def": "Database Migration Service: replicates databases to S3 with ongoing change capture."},
-      {"term": "CDC", "def": "Change data capture — replicating ongoing database writes after an initial load."}
+      {
+        "term": "Athena",
+        "def": "Serverless SQL query service over S3 data, priced per terabyte scanned."
+      },
+      {
+        "term": "CTAS",
+        "def": "CREATE TABLE AS SELECT — materializes a query result as a new (often optimized) table."
+      },
+      {
+        "term": "Workgroup",
+        "def": "Athena construct isolating queries with cost and access controls per team."
+      },
+      {
+        "term": "Kinesis Data Streams",
+        "def": "Real-time streaming with shards and custom consumers; supports replay."
+      },
+      {
+        "term": "Firehose",
+        "def": "Fully managed stream delivery to S3/Redshift/OpenSearch with batching and compression."
+      },
+      {
+        "term": "DMS",
+        "def": "Database Migration Service: replicates databases to S3 with ongoing change capture."
+      },
+      {
+        "term": "CDC",
+        "def": "Change data capture — replicating ongoing database writes after an initial load."
+      }
     ],
     "resources": [
-      {"label": "bli55 AWS ML notes", "url": "https://github.com/bli55/notes-aws-machine-learning", "note": "Athena and Kinesis sections with exam framing."},
-      {"label": "ccsusan MLA notes", "url": "https://github.com/ccsusan/aws-mla-certification-notes", "note": "data-services.md quick reference for Athena, Kinesis, DMS."},
-      {"label": "ihatesea69 labs", "url": "https://github.com/ihatesea69/aws-mla-study-notes-and-hands-on-labs", "note": "Hands-on labs including Glue crawler plus Athena query patterns."}
+      {
+        "label": "bli55 AWS ML notes",
+        "url": "https://github.com/bli55/notes-aws-machine-learning",
+        "note": "Athena and Kinesis sections with exam framing."
+      },
+      {
+        "label": "ccsusan MLA notes",
+        "url": "https://github.com/ccsusan/aws-mla-certification-notes",
+        "note": "data-services.md quick reference for Athena, Kinesis, DMS."
+      },
+      {
+        "label": "AWS Skill Builder",
+        "url": "https://skillbuilder.aws",
+        "note": "Topic reviews and hands-on paths for Glue, Athena, and Kinesis patterns."
+      }
     ],
     "quiz": [
-      {"q": "Athena charges based on...", "options": ["Number of queries per month", "Amount of data scanned per query", "Cluster uptime hours", "Rows returned"], "answer": 1, "why": "Athena is serverless and bills per terabyte of data scanned — hence Parquet plus partitioning."},
-      {"q": "Which two practices together most reduce Athena query cost?", "options": ["CSV format and more partitions", "Parquet format and partition pruning", "JSONL format and larger result sets", "Encryption and versioning"], "answer": 1, "why": "Columnar Parquet plus partitions means Athena reads the minimum bytes, and cost follows bytes scanned."},
-      {"q": "You need a fully managed service that continuously loads streaming click events into S3 with batching and compression, without writing consumer code. Choose:", "options": ["Kinesis Data Streams", "Amazon Data Firehose", "DMS", "SQS"], "answer": 1, "why": "Firehose is the fully managed delivery service to S3/Redshift/OpenSearch — Streams requires you to build and scale consumers."},
-      {"q": "A team must replicate an on-premises PostgreSQL database to S3, including ongoing changes, to feed a data lake. Which service?", "options": ["Athena", "AWS DMS with change data capture", "Glue DataBrew", "Kinesis Data Streams"], "answer": 1, "why": "DMS migrates databases and replicates ongoing changes (CDC) to targets like S3."},
-      {"q": "An Athena query needs a table definition for S3 data. Where does Athena get it?", "options": ["From the Glue Data Catalog", "From the S3 bucket policy", "From an EMR cluster", "From CloudFormation"], "answer": 0, "why": "Athena reads table metadata from the Glue Data Catalog, which maps tables to S3 locations."}
+      {
+        "q": "Athena charges based on...",
+        "options": [
+          "Number of queries per month",
+          "Amount of data scanned per query",
+          "Cluster uptime hours",
+          "Rows returned"
+        ],
+        "answer": 1,
+        "why": "Athena is serverless and bills per terabyte of data scanned — hence Parquet plus partitioning."
+      },
+      {
+        "q": "Which two practices together most reduce Athena query cost?",
+        "options": [
+          "CSV format and more partitions",
+          "Parquet format and partition pruning",
+          "JSONL format and larger result sets",
+          "Encryption and versioning"
+        ],
+        "answer": 1,
+        "why": "Columnar Parquet plus partitions means Athena reads the minimum bytes, and cost follows bytes scanned."
+      },
+      {
+        "q": "You need a fully managed service that continuously loads streaming click events into S3 with batching and compression, without writing consumer code. Choose:",
+        "options": [
+          "Kinesis Data Streams",
+          "Amazon Data Firehose",
+          "DMS",
+          "SQS"
+        ],
+        "answer": 1,
+        "why": "Firehose is the fully managed delivery service to S3/Redshift/OpenSearch — Streams requires you to build and scale consumers."
+      },
+      {
+        "q": "A team must replicate an on-premises PostgreSQL database to S3, including ongoing changes, to feed a data lake. Which service?",
+        "options": [
+          "Athena",
+          "AWS DMS with change data capture",
+          "Glue DataBrew",
+          "Kinesis Data Streams"
+        ],
+        "answer": 1,
+        "why": "DMS migrates databases and replicates ongoing changes (CDC) to targets like S3."
+      },
+      {
+        "q": "An Athena query needs a table definition for S3 data. Where does Athena get it?",
+        "options": [
+          "From the Glue Data Catalog",
+          "From the S3 bucket policy",
+          "From an EMR cluster",
+          "From CloudFormation"
+        ],
+        "answer": 0,
+        "why": "Athena reads table metadata from the Glue Data Catalog, which maps tables to S3 locations."
+      }
     ]
   },
   {
@@ -585,35 +910,183 @@
       }
     ],
     "keyTerms": [
-      {"term": "Overfitting", "def": "High train score, poor validation score — model memorized noise (high variance)."},
-      {"term": "Validation set", "def": "Held-out data for tuning hyperparameters and comparing models."},
-      {"term": "Parquet", "def": "Columnar, compressed format preferred for analytics and ML training data."},
-      {"term": "Partitioning", "def": "S3 key organization letting queries skip irrelevant data (partition pruning)."},
-      {"term": "Lifecycle policy", "def": "Automatic S3 transitions and expirations for cost optimization."},
-      {"term": "Data Catalog", "def": "Glue metadata store shared by Athena, EMR, and SageMaker."},
-      {"term": "Crawler", "def": "Infers schema and registers Catalog tables; does not transform data."},
-      {"term": "Job bookmark", "def": "Makes recurring Glue jobs process only new data."},
-      {"term": "Athena", "def": "Serverless SQL on S3, priced per terabyte scanned."},
-      {"term": "Firehose", "def": "Fully managed stream delivery to S3/Redshift/OpenSearch."},
-      {"term": "DMS", "def": "Replicates databases to S3 with ongoing change data capture."},
-      {"term": "Data leakage", "def": "Test information contaminating training, invalidating results."}
+      {
+        "term": "Overfitting",
+        "def": "High train score, poor validation score — model memorized noise (high variance)."
+      },
+      {
+        "term": "Validation set",
+        "def": "Held-out data for tuning hyperparameters and comparing models."
+      },
+      {
+        "term": "Parquet",
+        "def": "Columnar, compressed format preferred for analytics and ML training data."
+      },
+      {
+        "term": "Partitioning",
+        "def": "S3 key organization letting queries skip irrelevant data (partition pruning)."
+      },
+      {
+        "term": "Lifecycle policy",
+        "def": "Automatic S3 transitions and expirations for cost optimization."
+      },
+      {
+        "term": "Data Catalog",
+        "def": "Glue metadata store shared by Athena, EMR, and SageMaker."
+      },
+      {
+        "term": "Crawler",
+        "def": "Infers schema and registers Catalog tables; does not transform data."
+      },
+      {
+        "term": "Job bookmark",
+        "def": "Makes recurring Glue jobs process only new data."
+      },
+      {
+        "term": "Athena",
+        "def": "Serverless SQL on S3, priced per terabyte scanned."
+      },
+      {
+        "term": "Firehose",
+        "def": "Fully managed stream delivery to S3/Redshift/OpenSearch."
+      },
+      {
+        "term": "DMS",
+        "def": "Replicates databases to S3 with ongoing change data capture."
+      },
+      {
+        "term": "Data leakage",
+        "def": "Test information contaminating training, invalidating results."
+      }
     ],
     "resources": [
-      {"label": "ccsusan MLA notes", "url": "https://github.com/ccsusan/aws-mla-certification-notes", "note": "Cheat sheet — the fastest full-week refresher."},
-      {"label": "bli55 AWS ML notes", "url": "https://github.com/bli55/notes-aws-machine-learning", "note": "Deeper re-reads for any topic that is still shaky."},
-      {"label": "ihatesea69 labs", "url": "https://github.com/ihatesea69/aws-mla-study-notes-and-hands-on-labs", "note": "Extra practice questions per topic."}
+      {
+        "label": "ccsusan MLA notes",
+        "url": "https://github.com/ccsusan/aws-mla-certification-notes",
+        "note": "Cheat sheet — the fastest full-week refresher."
+      },
+      {
+        "label": "bli55 AWS ML notes",
+        "url": "https://github.com/bli55/notes-aws-machine-learning",
+        "note": "Deeper re-reads for any topic that is still shaky."
+      },
+      {
+        "label": "AWS Skill Builder",
+        "url": "https://skillbuilder.aws",
+        "note": "Extra topic reviews and hands-on courses for any shaky topic."
+      }
     ],
     "quiz": [
-      {"q": "A model scores 98% on training data but 70% on validation data. What should you suspect first?", "options": ["Underfitting", "Overfitting", "Data leakage", "Bad random seed"], "answer": 1, "why": "A large train/validation gap with high training accuracy is the overfitting signature."},
-      {"q": "Which is the correct use of the test set?", "options": ["Tune hyperparameters on it", "Compare shortlisted models on it", "Use it once at the end for a final unbiased estimate", "Fold it into training after validation"], "answer": 2, "why": "The test set stays locked until the end; validation handles tuning and comparison."},
-      {"q": "Predicting customer churn from labeled historical records is an example of...", "options": ["Unsupervised learning", "Reinforcement learning", "Supervised learning", "Dimensionality reduction"], "answer": 2, "why": "Labeled historical outcomes make it supervised (classification)."},
-      {"q": "Which format should you choose for 2 TB of event data queried regularly by Athena?", "options": ["CSV", "JSONL", "Parquet", "Plain text"], "answer": 2, "why": "Parquet's columnar, compressed layout minimizes bytes scanned — and Athena bills per byte scanned."},
-      {"q": "An engineer deletes the wrong prefix of training data in S3. Recovery is possible because...", "options": ["Lifecycle policies were set", "Versioning was enabled on the bucket", "S3 Select was used", "The bucket was encrypted"], "answer": 1, "why": "Versioning preserves every object variant, making overwrites and deletes recoverable."},
-      {"q": "Raw ingestion data should move to cheaper storage after 60 days without manual effort. The answer is...", "options": ["A larger bucket", "A lifecycle policy", "S3 Select", "Cross-region replication"], "answer": 1, "why": "Lifecycle policies automatically transition aging objects to cheaper storage classes."},
-      {"q": "After a Glue crawler runs, where can Athena find the new table definition?", "options": ["In the crawler logs", "In the Glue Data Catalog", "In the S3 bucket policy", "In the ETL script"], "answer": 1, "why": "Crawlers register inferred schemas as tables in the Data Catalog, which Athena queries."},
-      {"q": "A nightly Glue job must skip files it already processed. Which feature?", "options": ["Crawler schedule", "Job bookmarks", "DataBrew profile", "Trigger priority"], "answer": 1, "why": "Job bookmarks track processed data so recurring jobs are incremental."},
-      {"q": "Two Athena queries return the same rows, but one scans 10x more data. What most likely differs?", "options": ["The workgroup name", "File format and partitioning of the underlying data", "The IAM role", "The encryption key"], "answer": 1, "why": "Scanned bytes are driven by format (Parquet vs CSV) and partition pruning."},
-      {"q": "Click events must flow into S3 continuously with batching and compression, and nobody will write consumer code. Choose:", "options": ["Kinesis Data Streams", "Firehose", "DMS", "Athena"], "answer": 1, "why": "Firehose is the fully managed delivery path to S3 with no consumer code; Streams needs custom consumers."}
+      {
+        "q": "A model scores 98% on training data but 70% on validation data. What should you suspect first?",
+        "options": [
+          "Underfitting",
+          "Overfitting",
+          "Data leakage",
+          "Bad random seed"
+        ],
+        "answer": 1,
+        "why": "A large train/validation gap with high training accuracy is the overfitting signature."
+      },
+      {
+        "q": "Which is the correct use of the test set?",
+        "options": [
+          "Tune hyperparameters on it",
+          "Compare shortlisted models on it",
+          "Use it once at the end for a final unbiased estimate",
+          "Fold it into training after validation"
+        ],
+        "answer": 2,
+        "why": "The test set stays locked until the end; validation handles tuning and comparison."
+      },
+      {
+        "q": "Predicting customer churn from labeled historical records is an example of...",
+        "options": [
+          "Unsupervised learning",
+          "Reinforcement learning",
+          "Supervised learning",
+          "Dimensionality reduction"
+        ],
+        "answer": 2,
+        "why": "Labeled historical outcomes make it supervised (classification)."
+      },
+      {
+        "q": "Which format should you choose for 2 TB of event data queried regularly by Athena?",
+        "options": [
+          "CSV",
+          "JSONL",
+          "Parquet",
+          "Plain text"
+        ],
+        "answer": 2,
+        "why": "Parquet's columnar, compressed layout minimizes bytes scanned — and Athena bills per byte scanned."
+      },
+      {
+        "q": "An engineer deletes the wrong prefix of training data in S3. Recovery is possible because...",
+        "options": [
+          "Lifecycle policies were set",
+          "Versioning was enabled on the bucket",
+          "S3 Select was used",
+          "The bucket was encrypted"
+        ],
+        "answer": 1,
+        "why": "Versioning preserves every object variant, making overwrites and deletes recoverable."
+      },
+      {
+        "q": "Raw ingestion data should move to cheaper storage after 60 days without manual effort. The answer is...",
+        "options": [
+          "A larger bucket",
+          "A lifecycle policy",
+          "S3 Select",
+          "Cross-region replication"
+        ],
+        "answer": 1,
+        "why": "Lifecycle policies automatically transition aging objects to cheaper storage classes."
+      },
+      {
+        "q": "After a Glue crawler runs, where can Athena find the new table definition?",
+        "options": [
+          "In the crawler logs",
+          "In the Glue Data Catalog",
+          "In the S3 bucket policy",
+          "In the ETL script"
+        ],
+        "answer": 1,
+        "why": "Crawlers register inferred schemas as tables in the Data Catalog, which Athena queries."
+      },
+      {
+        "q": "A nightly Glue job must skip files it already processed. Which feature?",
+        "options": [
+          "Crawler schedule",
+          "Job bookmarks",
+          "DataBrew profile",
+          "Trigger priority"
+        ],
+        "answer": 1,
+        "why": "Job bookmarks track processed data so recurring jobs are incremental."
+      },
+      {
+        "q": "Two Athena queries return the same rows, but one scans 10x more data. What most likely differs?",
+        "options": [
+          "The workgroup name",
+          "File format and partitioning of the underlying data",
+          "The IAM role",
+          "The encryption key"
+        ],
+        "answer": 1,
+        "why": "Scanned bytes are driven by format (Parquet vs CSV) and partition pruning."
+      },
+      {
+        "q": "Click events must flow into S3 continuously with batching and compression, and nobody will write consumer code. Choose:",
+        "options": [
+          "Kinesis Data Streams",
+          "Firehose",
+          "DMS",
+          "Athena"
+        ],
+        "answer": 1,
+        "why": "Firehose is the fully managed delivery path to S3 with no consumer code; Streams needs custom consumers."
+      }
     ]
   },
   {
@@ -665,7 +1138,7 @@
         "time": "1h",
         "label": "Practice + teach-it-back",
         "steps": [
-          "Answer 20 practice questions on Ground Truth, EMR, and Clarify from the ihatesea69 labs repo",
+          "Answer 20 practice questions on Ground Truth, EMR, and Clarify from the tracker's quiz and your flagged-question review",
           "Out loud: explain pre-training vs post-training bias metrics to an interviewer, with one example metric of each",
           "Log every stall for the Day 10 review"
         ]
@@ -719,26 +1192,112 @@
       }
     ],
     "keyTerms": [
-      {"term": "Ground Truth", "def": "SageMaker's managed data-labeling service with selectable workforces."},
-      {"term": "Private workforce", "def": "Your own labelers — required for sensitive or regulated data."},
-      {"term": "Active learning", "def": "Model pre-labels confident items; humans verify only uncertain ones."},
-      {"term": "EMR", "def": "Managed Hadoop/Spark clusters you configure and control."},
-      {"term": "Clarify", "def": "SageMaker tool for bias detection and model explainability."},
-      {"term": "Pre-training bias metrics", "def": "Dataset bias measured before training, e.g. class imbalance (CI)."},
-      {"term": "Post-training bias metrics", "def": "Model bias measured after training, e.g. DPPL across groups."},
-      {"term": "SHAP values", "def": "Feature-attribution scores explaining individual predictions."}
+      {
+        "term": "Ground Truth",
+        "def": "SageMaker's managed data-labeling service with selectable workforces."
+      },
+      {
+        "term": "Private workforce",
+        "def": "Your own labelers — required for sensitive or regulated data."
+      },
+      {
+        "term": "Active learning",
+        "def": "Model pre-labels confident items; humans verify only uncertain ones."
+      },
+      {
+        "term": "EMR",
+        "def": "Managed Hadoop/Spark clusters you configure and control."
+      },
+      {
+        "term": "Clarify",
+        "def": "SageMaker tool for bias detection and model explainability."
+      },
+      {
+        "term": "Pre-training bias metrics",
+        "def": "Dataset bias measured before training, e.g. class imbalance (CI)."
+      },
+      {
+        "term": "Post-training bias metrics",
+        "def": "Model bias measured after training, e.g. DPPL across groups."
+      },
+      {
+        "term": "SHAP values",
+        "def": "Feature-attribution scores explaining individual predictions."
+      }
     ],
     "resources": [
-      {"label": "SageMaker docs", "url": "https://docs.aws.amazon.com/sagemaker/", "note": "Ground Truth workforce options and Clarify bias metrics reference."},
-      {"label": "bli55 AWS ML notes", "url": "https://github.com/bli55/notes-aws-machine-learning", "note": "Ground Truth, EMR, and Clarify sections with exam framing."},
-      {"label": "ccsusan MLA notes", "url": "https://github.com/ccsusan/aws-mla-certification-notes", "note": "Quick reference for labeling and bias-detection facts."}
+      {
+        "label": "SageMaker docs",
+        "url": "https://docs.aws.amazon.com/sagemaker/",
+        "note": "Ground Truth workforce options and Clarify bias metrics reference."
+      },
+      {
+        "label": "bli55 AWS ML notes",
+        "url": "https://github.com/bli55/notes-aws-machine-learning",
+        "note": "Ground Truth, EMR, and Clarify sections with exam framing."
+      },
+      {
+        "label": "ccsusan MLA notes",
+        "url": "https://github.com/ccsusan/aws-mla-certification-notes",
+        "note": "Quick reference for labeling and bias-detection facts."
+      }
     ],
     "quiz": [
-      {"q": "You must label 50,000 medical images under strict privacy rules that forbid external workers. Which Ground Truth workforce fits?", "options": ["Amazon Mechanical Turk public workforce", "Private workforce", "Vendor workforce via AWS Marketplace", "Anonymous crowd"], "answer": 1, "why": "A private workforce (your own team) keeps sensitive data in-house; public crowds are out for regulated data."},
-      {"q": "In Ground Truth active learning, what happens?", "options": ["Humans label everything twice", "A model auto-labels high-confidence objects and humans verify the rest", "Labels are generated with no human review", "The workforce is selected automatically"], "answer": 1, "why": "Active learning uses the model for easy cases and routes uncertain ones to humans, cutting labeling cost."},
-      {"q": "A team needs full control over a large Spark cluster for custom preprocessing with Hadoop ecosystem tools. Best fit?", "options": ["Glue ETL", "Amazon EMR", "Athena", "DataBrew"], "answer": 1, "why": "EMR gives managed Hadoop/Spark clusters you configure and control; Glue is serverless and simpler."},
-      {"q": "SageMaker Clarify reports class imbalance (CI) and difference in positive proportions in labels (DPL) before any model is trained. These are...", "options": ["Post-training bias metrics", "Pre-training bias metrics", "Explainability scores", "Data quality constraints"], "answer": 1, "why": "Pre-training metrics measure bias in the dataset itself, before training begins."},
-      {"q": "After training, Clarify shows a large difference in positive proportions in predicted labels (DPPL) between two groups. This indicates...", "options": ["The dataset was balanced", "The model's predictions favor one group — post-training bias", "The features need scaling", "The training job failed"], "answer": 1, "why": "DPPL compares prediction rates across groups after training — a gap signals model bias."}
+      {
+        "q": "You must label 50,000 medical images under strict privacy rules that forbid external workers. Which Ground Truth workforce fits?",
+        "options": [
+          "Amazon Mechanical Turk public workforce",
+          "Private workforce",
+          "Vendor workforce via AWS Marketplace",
+          "Anonymous crowd"
+        ],
+        "answer": 1,
+        "why": "A private workforce (your own team) keeps sensitive data in-house; public crowds are out for regulated data."
+      },
+      {
+        "q": "In Ground Truth active learning, what happens?",
+        "options": [
+          "Humans label everything twice",
+          "A model auto-labels high-confidence objects and humans verify the rest",
+          "Labels are generated with no human review",
+          "The workforce is selected automatically"
+        ],
+        "answer": 1,
+        "why": "Active learning uses the model for easy cases and routes uncertain ones to humans, cutting labeling cost."
+      },
+      {
+        "q": "A team needs full control over a large Spark cluster for custom preprocessing with Hadoop ecosystem tools. Best fit?",
+        "options": [
+          "Glue ETL",
+          "Amazon EMR",
+          "Athena",
+          "DataBrew"
+        ],
+        "answer": 1,
+        "why": "EMR gives managed Hadoop/Spark clusters you configure and control; Glue is serverless and simpler."
+      },
+      {
+        "q": "SageMaker Clarify reports class imbalance (CI) and difference in positive proportions in labels (DPL) before any model is trained. These are...",
+        "options": [
+          "Post-training bias metrics",
+          "Pre-training bias metrics",
+          "Explainability scores",
+          "Data quality constraints"
+        ],
+        "answer": 1,
+        "why": "Pre-training metrics measure bias in the dataset itself, before training begins."
+      },
+      {
+        "q": "After training, Clarify shows a large difference in positive proportions in predicted labels (DPPL) between two groups. This indicates...",
+        "options": [
+          "The dataset was balanced",
+          "The model's predictions favor one group — post-training bias",
+          "The features need scaling",
+          "The training job failed"
+        ],
+        "answer": 1,
+        "why": "DPPL compares prediction rates across groups after training — a gap signals model bias."
+      }
     ]
   },
   {
@@ -793,7 +1352,7 @@
         "time": "1h",
         "label": "Practice + teach-it-back",
         "steps": [
-          "Answer 20 practice questions on feature engineering from the ihatesea69 labs repo",
+          "Answer 20 practice questions on feature engineering from the tracker's quiz and your flagged-question review",
           "Out loud: explain train/serve skew and how a feature store prevents it — in under two minutes",
           "Log every stall for the Day 10 review"
         ]
@@ -847,26 +1406,112 @@
       }
     ],
     "keyTerms": [
-      {"term": "Feature Store", "def": "SageMaker's managed repository serving consistent features to training and inference."},
-      {"term": "Online store", "def": "Low-latency feature lookup for real-time inference."},
-      {"term": "Offline store", "def": "S3-backed historical features for training and batch inference."},
-      {"term": "Train/serve skew", "def": "Mismatch between training and inference features, causing degraded live performance."},
-      {"term": "Standardization", "def": "Rescaling to zero mean and unit variance."},
-      {"term": "One-hot encoding", "def": "Binary column per category for nominal features."},
-      {"term": "Binning", "def": "Grouping continuous values into discrete ranges."},
-      {"term": "Tokenization", "def": "Splitting text into tokens as the first text-processing step."}
+      {
+        "term": "Feature Store",
+        "def": "SageMaker's managed repository serving consistent features to training and inference."
+      },
+      {
+        "term": "Online store",
+        "def": "Low-latency feature lookup for real-time inference."
+      },
+      {
+        "term": "Offline store",
+        "def": "S3-backed historical features for training and batch inference."
+      },
+      {
+        "term": "Train/serve skew",
+        "def": "Mismatch between training and inference features, causing degraded live performance."
+      },
+      {
+        "term": "Standardization",
+        "def": "Rescaling to zero mean and unit variance."
+      },
+      {
+        "term": "One-hot encoding",
+        "def": "Binary column per category for nominal features."
+      },
+      {
+        "term": "Binning",
+        "def": "Grouping continuous values into discrete ranges."
+      },
+      {
+        "term": "Tokenization",
+        "def": "Splitting text into tokens as the first text-processing step."
+      }
     ],
     "resources": [
-      {"label": "SageMaker docs", "url": "https://docs.aws.amazon.com/sagemaker/", "note": "Feature Store concepts: online vs offline stores, feature groups."},
-      {"label": "bli55 AWS ML notes", "url": "https://github.com/bli55/notes-aws-machine-learning", "note": "Feature engineering sections with exam framing."},
-      {"label": "ccsusan MLA notes", "url": "https://github.com/ccsusan/aws-mla-certification-notes", "note": "feature-engineering.md quick reference."}
+      {
+        "label": "SageMaker docs",
+        "url": "https://docs.aws.amazon.com/sagemaker/",
+        "note": "Feature Store concepts: online vs offline stores, feature groups."
+      },
+      {
+        "label": "bli55 AWS ML notes",
+        "url": "https://github.com/bli55/notes-aws-machine-learning",
+        "note": "Feature engineering sections with exam framing."
+      },
+      {
+        "label": "ccsusan MLA notes",
+        "url": "https://github.com/ccsusan/aws-mla-certification-notes",
+        "note": "feature-engineering.md quick reference."
+      }
     ],
     "quiz": [
-      {"q": "A fraud model needs feature values in under 10 ms at inference time. Which Feature Store component serves them?", "options": ["Offline store", "Online store", "Data Catalog", "S3 Glacier"], "answer": 1, "why": "The online store is the low-latency store for real-time inference; the offline store backs training."},
-      {"q": "You are training with batch data and need point-in-time-correct feature values as of each example's timestamp. Use...", "options": ["Online store", "Offline store", "Athena", "ElastiCache"], "answer": 1, "why": "The offline store keeps historical feature values in S3 for reproducible training datasets."},
-      {"q": "KNN performs poorly because one feature ranges 0–1,000,000 while others range 0–1. The fix is...", "options": ["One-hot encoding", "Feature scaling (standardization or normalization)", "Binning into quartiles", "Tokenization"], "answer": 1, "why": "Distance- and gradient-based methods need features on comparable scales."},
-      {"q": "A `city` column with 40 distinct values feeds a linear model. The standard encoding is...", "options": ["One-hot encoding", "Hashing to a single number", "Dropping the column", "Tokenization"], "answer": 0, "why": "One-hot encoding turns low-cardinality categoricals into numeric columns a linear model can use."},
-      {"q": "Binning a continuous `age` column into ranges like 18–25, 26–35 is useful because...", "options": ["It increases precision", "It reduces noise and captures non-linear effects simply", "It is required for Parquet", "It encrypts the values"], "answer": 1, "why": "Binning trades fine granularity for robustness and simple non-linear patterns."}
+      {
+        "q": "A fraud model needs feature values in under 10 ms at inference time. Which Feature Store component serves them?",
+        "options": [
+          "Offline store",
+          "Online store",
+          "Data Catalog",
+          "S3 Glacier"
+        ],
+        "answer": 1,
+        "why": "The online store is the low-latency store for real-time inference; the offline store backs training."
+      },
+      {
+        "q": "You are training with batch data and need point-in-time-correct feature values as of each example's timestamp. Use...",
+        "options": [
+          "Online store",
+          "Offline store",
+          "Athena",
+          "ElastiCache"
+        ],
+        "answer": 1,
+        "why": "The offline store keeps historical feature values in S3 for reproducible training datasets."
+      },
+      {
+        "q": "KNN performs poorly because one feature ranges 0–1,000,000 while others range 0–1. The fix is...",
+        "options": [
+          "One-hot encoding",
+          "Feature scaling (standardization or normalization)",
+          "Binning into quartiles",
+          "Tokenization"
+        ],
+        "answer": 1,
+        "why": "Distance- and gradient-based methods need features on comparable scales."
+      },
+      {
+        "q": "A `city` column with 40 distinct values feeds a linear model. The standard encoding is...",
+        "options": [
+          "One-hot encoding",
+          "Hashing to a single number",
+          "Dropping the column",
+          "Tokenization"
+        ],
+        "answer": 0,
+        "why": "One-hot encoding turns low-cardinality categoricals into numeric columns a linear model can use."
+      },
+      {
+        "q": "Binning a continuous `age` column into ranges like 18–25, 26–35 is useful because...",
+        "options": [
+          "It increases precision",
+          "It reduces noise and captures non-linear effects simply",
+          "It is required for Parquet",
+          "It encrypts the values"
+        ],
+        "answer": 1,
+        "why": "Binning trades fine granularity for robustness and simple non-linear patterns."
+      }
     ]
   },
   {
@@ -918,7 +1563,7 @@
         "time": "1h",
         "label": "Practice + teach-it-back",
         "steps": [
-          "Answer 20 practice questions on built-in algorithms from the ihatesea69 labs repo",
+          "Answer 20 practice questions on built-in algorithms from the tracker's quiz and your flagged-question review",
           "Out loud, 60 seconds per algorithm: when to use XGBoost, Linear Learner, K-means, and Factorization Machines — with one example each",
           "Log every stall for the Day 10 review"
         ]
@@ -972,24 +1617,104 @@
       }
     ],
     "keyTerms": [
-      {"term": "XGBoost", "def": "Gradient-boosted trees; top tabular classification/regression algorithm, handles missing values."},
-      {"term": "Linear Learner", "def": "SageMaker's linear models for classification and regression; fast interpretable baseline."},
-      {"term": "K-means", "def": "Unsupervised clustering into k groups by Euclidean distance."},
-      {"term": "Factorization Machines", "def": "Algorithm for sparse high-dimensional data modeling pairwise feature interactions."},
-      {"term": "eta", "def": "XGBoost learning rate — shrinkage applied to each tree's contribution."},
-      {"term": "max_depth", "def": "Maximum tree depth in XGBoost — primary complexity/overfitting control."}
+      {
+        "term": "XGBoost",
+        "def": "Gradient-boosted trees; top tabular classification/regression algorithm, handles missing values."
+      },
+      {
+        "term": "Linear Learner",
+        "def": "SageMaker's linear models for classification and regression; fast interpretable baseline."
+      },
+      {
+        "term": "K-means",
+        "def": "Unsupervised clustering into k groups by Euclidean distance."
+      },
+      {
+        "term": "Factorization Machines",
+        "def": "Algorithm for sparse high-dimensional data modeling pairwise feature interactions."
+      },
+      {
+        "term": "eta",
+        "def": "XGBoost learning rate — shrinkage applied to each tree's contribution."
+      },
+      {
+        "term": "max_depth",
+        "def": "Maximum tree depth in XGBoost — primary complexity/overfitting control."
+      }
     ],
     "resources": [
-      {"label": "SageMaker docs", "url": "https://docs.aws.amazon.com/sagemaker/", "note": "Built-in algorithms reference: use cases and hyperparameters."},
-      {"label": "bli55 AWS ML notes", "url": "https://github.com/bli55/notes-aws-machine-learning", "note": "Algorithm cheat sheets with exam framing."},
-      {"label": "ccsusan MLA notes", "url": "https://github.com/ccsusan/aws-mla-certification-notes", "note": "aws-ml-algorithms.md covering the built-in algorithm list."}
+      {
+        "label": "SageMaker docs",
+        "url": "https://docs.aws.amazon.com/sagemaker/",
+        "note": "Built-in algorithms reference: use cases and hyperparameters."
+      },
+      {
+        "label": "bli55 AWS ML notes",
+        "url": "https://github.com/bli55/notes-aws-machine-learning",
+        "note": "Algorithm cheat sheets with exam framing."
+      },
+      {
+        "label": "ccsusan MLA notes",
+        "url": "https://github.com/ccsusan/aws-mla-certification-notes",
+        "note": "aws-ml-algorithms.md covering the built-in algorithm list."
+      }
     ],
     "quiz": [
-      {"q": "Tabular data, binary classification, missing values, need strong out-of-the-box performance. Best built-in algorithm?", "options": ["Linear Learner", "XGBoost", "K-means", "BlazingText"], "answer": 1, "why": "XGBoost (gradient-boosted trees) is the go-to for tabular classification/regression and handles missing values."},
-      {"q": "You need a fast linear baseline for multiclass classification on dense numeric features. Choose:", "options": ["XGBoost", "Factorization Machines", "Linear Learner", "DeepAR"], "answer": 2, "why": "Linear Learner fits linear models for classification and regression — a quick, interpretable baseline."},
-      {"q": "Customer segmentation with no labels — group users by behavior. Which algorithm?", "options": ["XGBoost", "K-means", "Linear Learner", "Object Detection"], "answer": 1, "why": "K-means is unsupervised clustering — the fit for unlabeled segmentation."},
-      {"q": "Click-through prediction on very sparse, high-dimensional categorical features. Best fit?", "options": ["Linear Learner", "K-means", "Factorization Machines", "DeepAR"], "answer": 2, "why": "Factorization Machines model pairwise interactions in sparse data — built for recommendations and CTR."},
-      {"q": "K-means is producing poor clusters on features with wildly different scales. Likely fix?", "options": ["Increase k", "Scale/standardize features first", "Switch to supervised labels", "Use a deeper tree"], "answer": 1, "why": "K-means uses Euclidean distance, so unscaled features let one dimension dominate."}
+      {
+        "q": "Tabular data, binary classification, missing values, need strong out-of-the-box performance. Best built-in algorithm?",
+        "options": [
+          "Linear Learner",
+          "XGBoost",
+          "K-means",
+          "BlazingText"
+        ],
+        "answer": 1,
+        "why": "XGBoost (gradient-boosted trees) is the go-to for tabular classification/regression and handles missing values."
+      },
+      {
+        "q": "You need a fast linear baseline for multiclass classification on dense numeric features. Choose:",
+        "options": [
+          "XGBoost",
+          "Factorization Machines",
+          "Linear Learner",
+          "DeepAR"
+        ],
+        "answer": 2,
+        "why": "Linear Learner fits linear models for classification and regression — a quick, interpretable baseline."
+      },
+      {
+        "q": "Customer segmentation with no labels — group users by behavior. Which algorithm?",
+        "options": [
+          "XGBoost",
+          "K-means",
+          "Linear Learner",
+          "Object Detection"
+        ],
+        "answer": 1,
+        "why": "K-means is unsupervised clustering — the fit for unlabeled segmentation."
+      },
+      {
+        "q": "Click-through prediction on very sparse, high-dimensional categorical features. Best fit?",
+        "options": [
+          "Linear Learner",
+          "K-means",
+          "Factorization Machines",
+          "DeepAR"
+        ],
+        "answer": 2,
+        "why": "Factorization Machines model pairwise interactions in sparse data — built for recommendations and CTR."
+      },
+      {
+        "q": "K-means is producing poor clusters on features with wildly different scales. Likely fix?",
+        "options": [
+          "Increase k",
+          "Scale/standardize features first",
+          "Switch to supervised labels",
+          "Use a deeper tree"
+        ],
+        "answer": 1,
+        "why": "K-means uses Euclidean distance, so unscaled features let one dimension dominate."
+      }
     ]
   },
   {
@@ -1042,7 +1767,7 @@
         "time": "1h",
         "label": "Practice + teach-it-back",
         "steps": [
-          "Answer 20 practice questions on algorithms II from the ihatesea69 labs repo",
+          "Answer 20 practice questions on algorithms II from the tracker's quiz and your flagged-question review",
           "Out loud: explain the difference between image classification, object detection, and semantic segmentation with one example each",
           "Log every stall for the Day 10 review"
         ]
@@ -1096,24 +1821,104 @@
       }
     ],
     "keyTerms": [
-      {"term": "BlazingText", "def": "Built-in algorithm for Word2Vec embeddings and supervised text classification."},
-      {"term": "DeepAR", "def": "RNN-based probabilistic forecaster for many related time series."},
-      {"term": "Object Detection", "def": "Vision algorithm drawing labeled bounding boxes around object instances."},
-      {"term": "Semantic Segmentation", "def": "Vision task labeling every pixel of an image."},
-      {"term": "KNN", "def": "Lazy, distance-based learner voting among nearest stored examples."},
-      {"term": "Early stopping", "def": "Halting training when validation metrics stop improving, to curb overfitting."}
+      {
+        "term": "BlazingText",
+        "def": "Built-in algorithm for Word2Vec embeddings and supervised text classification."
+      },
+      {
+        "term": "DeepAR",
+        "def": "RNN-based probabilistic forecaster for many related time series."
+      },
+      {
+        "term": "Object Detection",
+        "def": "Vision algorithm drawing labeled bounding boxes around object instances."
+      },
+      {
+        "term": "Semantic Segmentation",
+        "def": "Vision task labeling every pixel of an image."
+      },
+      {
+        "term": "KNN",
+        "def": "Lazy, distance-based learner voting among nearest stored examples."
+      },
+      {
+        "term": "Early stopping",
+        "def": "Halting training when validation metrics stop improving, to curb overfitting."
+      }
     ],
     "resources": [
-      {"label": "SageMaker docs", "url": "https://docs.aws.amazon.com/sagemaker/", "note": "Built-in algorithms reference: BlazingText, DeepAR, vision algorithms, KNN."},
-      {"label": "bli55 AWS ML notes", "url": "https://github.com/bli55/notes-aws-machine-learning", "note": "Algorithm sections with exam-style comparisons."},
-      {"label": "ihatesea69 labs", "url": "https://github.com/ihatesea69/aws-mla-study-notes-and-hands-on-labs", "note": "Hands-on labs including XGBoost training patterns."}
+      {
+        "label": "SageMaker docs",
+        "url": "https://docs.aws.amazon.com/sagemaker/",
+        "note": "Built-in algorithms reference: BlazingText, DeepAR, vision algorithms, KNN."
+      },
+      {
+        "label": "bli55 AWS ML notes",
+        "url": "https://github.com/bli55/notes-aws-machine-learning",
+        "note": "Algorithm sections with exam-style comparisons."
+      },
+      {
+        "label": "AWS SageMaker examples (official)",
+        "url": "https://github.com/aws/amazon-sagemaker-examples",
+        "note": "Official AWS notebook collection — XGBoost training patterns, inference, and MLOps labs."
+      }
     ],
     "quiz": [
-      {"q": "You need word embeddings plus a text classifier trained on labeled sentences. Which built-in algorithm?", "options": ["BlazingText", "DeepAR", "KNN", "Linear Learner"], "answer": 0, "why": "BlazingText implements Word2Vec embeddings and supervised text classification."},
-      {"q": "Forecasting demand across hundreds of related product time series with uncertainty intervals. Best fit?", "options": ["BlazingText", "DeepAR", "Object Detection", "K-means"], "answer": 1, "why": "DeepAR is the RNN-based probabilistic forecaster designed for many related time series."},
-      {"q": "An image model must draw bounding boxes around defects, not just label the whole image. This is...", "options": ["Image classification", "Object detection", "Semantic segmentation", "KNN"], "answer": 1, "why": "Object detection localizes objects with bounding boxes; classification assigns one label per image."},
-      {"q": "KNN makes predictions by...", "options": ["Building gradient-boosted trees", "Storing training data and voting among the nearest neighbors at inference", "Learning a linear boundary", "Clustering then labeling clusters"], "answer": 1, "why": "KNN is a lazy learner — no training phase; it queries stored examples by distance at prediction time."},
-      {"q": "In XGBoost, `eta` (learning rate) and `max_depth` control...", "options": ["The S3 output path", "Step size shrinkage and tree complexity — key overfitting levers", "The number of K-means clusters", "Data encryption"], "answer": 1, "why": "eta shrinks each tree's contribution and max_depth caps tree size; both are primary regularization knobs."}
+      {
+        "q": "You need word embeddings plus a text classifier trained on labeled sentences. Which built-in algorithm?",
+        "options": [
+          "BlazingText",
+          "DeepAR",
+          "KNN",
+          "Linear Learner"
+        ],
+        "answer": 0,
+        "why": "BlazingText implements Word2Vec embeddings and supervised text classification."
+      },
+      {
+        "q": "Forecasting demand across hundreds of related product time series with uncertainty intervals. Best fit?",
+        "options": [
+          "BlazingText",
+          "DeepAR",
+          "Object Detection",
+          "K-means"
+        ],
+        "answer": 1,
+        "why": "DeepAR is the RNN-based probabilistic forecaster designed for many related time series."
+      },
+      {
+        "q": "An image model must draw bounding boxes around defects, not just label the whole image. This is...",
+        "options": [
+          "Image classification",
+          "Object detection",
+          "Semantic segmentation",
+          "KNN"
+        ],
+        "answer": 1,
+        "why": "Object detection localizes objects with bounding boxes; classification assigns one label per image."
+      },
+      {
+        "q": "KNN makes predictions by...",
+        "options": [
+          "Building gradient-boosted trees",
+          "Storing training data and voting among the nearest neighbors at inference",
+          "Learning a linear boundary",
+          "Clustering then labeling clusters"
+        ],
+        "answer": 1,
+        "why": "KNN is a lazy learner — no training phase; it queries stored examples by distance at prediction time."
+      },
+      {
+        "q": "In XGBoost, `eta` (learning rate) and `max_depth` control...",
+        "options": [
+          "The S3 output path",
+          "Step size shrinkage and tree complexity — key overfitting levers",
+          "The number of K-means clusters",
+          "Data encryption"
+        ],
+        "answer": 1,
+        "why": "eta shrinks each tree's contribution and max_depth caps tree size; both are primary regularization knobs."
+      }
     ]
   },
   {
@@ -1196,35 +2001,183 @@
       }
     ],
     "keyTerms": [
-      {"term": "Ground Truth", "def": "Managed labeling with private, vendor, or public workforces."},
-      {"term": "Active learning", "def": "Model pre-labels confident items; humans verify uncertain ones."},
-      {"term": "EMR", "def": "Managed Hadoop/Spark clusters you configure and control."},
-      {"term": "Pre-training bias metrics", "def": "Dataset bias before training (CI, DPL)."},
-      {"term": "Post-training bias metrics", "def": "Model bias after training (DPPL)."},
-      {"term": "Online store", "def": "Millisecond feature lookups for real-time inference."},
-      {"term": "Offline store", "def": "S3-backed feature history for training."},
-      {"term": "XGBoost", "def": "Gradient-boosted trees; tabular classification/regression default."},
-      {"term": "K-means", "def": "Unsupervised clustering by Euclidean distance."},
-      {"term": "Factorization Machines", "def": "Sparse-data algorithm modeling pairwise feature interactions."},
-      {"term": "BlazingText", "def": "Word2Vec embeddings plus supervised text classification."},
-      {"term": "DeepAR", "def": "Probabilistic RNN forecaster for many related time series."}
+      {
+        "term": "Ground Truth",
+        "def": "Managed labeling with private, vendor, or public workforces."
+      },
+      {
+        "term": "Active learning",
+        "def": "Model pre-labels confident items; humans verify uncertain ones."
+      },
+      {
+        "term": "EMR",
+        "def": "Managed Hadoop/Spark clusters you configure and control."
+      },
+      {
+        "term": "Pre-training bias metrics",
+        "def": "Dataset bias before training (CI, DPL)."
+      },
+      {
+        "term": "Post-training bias metrics",
+        "def": "Model bias after training (DPPL)."
+      },
+      {
+        "term": "Online store",
+        "def": "Millisecond feature lookups for real-time inference."
+      },
+      {
+        "term": "Offline store",
+        "def": "S3-backed feature history for training."
+      },
+      {
+        "term": "XGBoost",
+        "def": "Gradient-boosted trees; tabular classification/regression default."
+      },
+      {
+        "term": "K-means",
+        "def": "Unsupervised clustering by Euclidean distance."
+      },
+      {
+        "term": "Factorization Machines",
+        "def": "Sparse-data algorithm modeling pairwise feature interactions."
+      },
+      {
+        "term": "BlazingText",
+        "def": "Word2Vec embeddings plus supervised text classification."
+      },
+      {
+        "term": "DeepAR",
+        "def": "Probabilistic RNN forecaster for many related time series."
+      }
     ],
     "resources": [
-      {"label": "SageMaker docs", "url": "https://docs.aws.amazon.com/sagemaker/", "note": "Built-in algorithms and Feature Store reference for weak spots."},
-      {"label": "ccsusan MLA notes", "url": "https://github.com/ccsusan/aws-mla-certification-notes", "note": "Cheat sheet — the fastest full-week refresher."},
-      {"label": "bli55 AWS ML notes", "url": "https://github.com/bli55/notes-aws-machine-learning", "note": "Deeper re-reads for any algorithm still shaky."}
+      {
+        "label": "SageMaker docs",
+        "url": "https://docs.aws.amazon.com/sagemaker/",
+        "note": "Built-in algorithms and Feature Store reference for weak spots."
+      },
+      {
+        "label": "ccsusan MLA notes",
+        "url": "https://github.com/ccsusan/aws-mla-certification-notes",
+        "note": "Cheat sheet — the fastest full-week refresher."
+      },
+      {
+        "label": "bli55 AWS ML notes",
+        "url": "https://github.com/bli55/notes-aws-machine-learning",
+        "note": "Deeper re-reads for any algorithm still shaky."
+      }
     ],
     "quiz": [
-      {"q": "A hospital needs 20,000 X-rays labeled and patient data cannot leave the organization. Which workforce?", "options": ["Public Mechanical Turk workforce", "Private workforce", "Vendor workforce", "No workforce — fully automated"], "answer": 1, "why": "Regulated, sensitive data requires the private workforce; external workers are out."},
-      {"q": "Clarify flags a high DPL value before training starts. What does this tell you?", "options": ["The model is biased", "The dataset's labels are imbalanced across groups — pre-training bias", "The features need scaling", "The endpoint is misconfigured"], "answer": 1, "why": "DPL is a pre-training metric: it measures label disparity in the dataset itself."},
-      {"q": "A data engineer wants zero cluster management for nightly Spark ETL. Choose:", "options": ["EMR", "Glue ETL", "Athena", "DMS"], "answer": 1, "why": "Glue ETL is serverless Spark; EMR means managing clusters."},
-      {"q": "An endpoint needs the latest computed features in 5 ms per request. Where do they come from?", "options": ["Offline store", "Online store", "Data Catalog", "Glue crawler"], "answer": 1, "why": "The online store exists for millisecond real-time feature lookups."},
-      {"q": "A logistic regression model underperforms because features span wildly different ranges. First fix?", "options": ["Switch to XGBoost", "Standardize the features", "Add more layers", "Collect more labels"], "answer": 1, "why": "Gradient-based linear models need comparable feature scales; standardization is the direct fix."},
-      {"q": "A `product_category` column with 12 values feeds a neural network. Standard encoding?", "options": ["One-hot encoding", "Raw strings", "Dropping the column", "Pixel values"], "answer": 0, "why": "One-hot converts low-cardinality categoricals into numeric columns the network can consume."},
-      {"q": "Binary churn prediction on a dense tabular dataset with some missing values. Strongest default algorithm?", "options": ["Linear Learner", "XGBoost", "K-means", "DeepAR"], "answer": 1, "why": "XGBoost dominates tabular classification and handles missing values natively."},
-      {"q": "Group 100k unlabeled support tickets by topic for triage. Which approach?", "options": ["XGBoost classifier", "K-means clustering", "Linear regression", "Object detection"], "answer": 1, "why": "No labels means unsupervised — K-means clustering groups the tickets by similarity."},
-      {"q": "Ad click prediction on sparse one-hot encoded user/item features. Best fit?", "options": ["Linear Learner", "Factorization Machines", "K-means", "BlazingText"], "answer": 1, "why": "Factorization Machines capture pairwise interactions in sparse data — the CTR/recommender answer."},
-      {"q": "Forecast inventory for 500 related SKUs with confidence intervals. Which algorithm?", "options": ["BlazingText", "DeepAR", "KNN", "Image Classification"], "answer": 1, "why": "DeepAR is the probabilistic forecaster built for many related time series."}
+      {
+        "q": "A hospital needs 20,000 X-rays labeled and patient data cannot leave the organization. Which workforce?",
+        "options": [
+          "Public Mechanical Turk workforce",
+          "Private workforce",
+          "Vendor workforce",
+          "No workforce — fully automated"
+        ],
+        "answer": 1,
+        "why": "Regulated, sensitive data requires the private workforce; external workers are out."
+      },
+      {
+        "q": "Clarify flags a high DPL value before training starts. What does this tell you?",
+        "options": [
+          "The model is biased",
+          "The dataset's labels are imbalanced across groups — pre-training bias",
+          "The features need scaling",
+          "The endpoint is misconfigured"
+        ],
+        "answer": 1,
+        "why": "DPL is a pre-training metric: it measures label disparity in the dataset itself."
+      },
+      {
+        "q": "A data engineer wants zero cluster management for nightly Spark ETL. Choose:",
+        "options": [
+          "EMR",
+          "Glue ETL",
+          "Athena",
+          "DMS"
+        ],
+        "answer": 1,
+        "why": "Glue ETL is serverless Spark; EMR means managing clusters."
+      },
+      {
+        "q": "An endpoint needs the latest computed features in 5 ms per request. Where do they come from?",
+        "options": [
+          "Offline store",
+          "Online store",
+          "Data Catalog",
+          "Glue crawler"
+        ],
+        "answer": 1,
+        "why": "The online store exists for millisecond real-time feature lookups."
+      },
+      {
+        "q": "A logistic regression model underperforms because features span wildly different ranges. First fix?",
+        "options": [
+          "Switch to XGBoost",
+          "Standardize the features",
+          "Add more layers",
+          "Collect more labels"
+        ],
+        "answer": 1,
+        "why": "Gradient-based linear models need comparable feature scales; standardization is the direct fix."
+      },
+      {
+        "q": "A `product_category` column with 12 values feeds a neural network. Standard encoding?",
+        "options": [
+          "One-hot encoding",
+          "Raw strings",
+          "Dropping the column",
+          "Pixel values"
+        ],
+        "answer": 0,
+        "why": "One-hot converts low-cardinality categoricals into numeric columns the network can consume."
+      },
+      {
+        "q": "Binary churn prediction on a dense tabular dataset with some missing values. Strongest default algorithm?",
+        "options": [
+          "Linear Learner",
+          "XGBoost",
+          "K-means",
+          "DeepAR"
+        ],
+        "answer": 1,
+        "why": "XGBoost dominates tabular classification and handles missing values natively."
+      },
+      {
+        "q": "Group 100k unlabeled support tickets by topic for triage. Which approach?",
+        "options": [
+          "XGBoost classifier",
+          "K-means clustering",
+          "Linear regression",
+          "Object detection"
+        ],
+        "answer": 1,
+        "why": "No labels means unsupervised — K-means clustering groups the tickets by similarity."
+      },
+      {
+        "q": "Ad click prediction on sparse one-hot encoded user/item features. Best fit?",
+        "options": [
+          "Linear Learner",
+          "Factorization Machines",
+          "K-means",
+          "BlazingText"
+        ],
+        "answer": 1,
+        "why": "Factorization Machines capture pairwise interactions in sparse data — the CTR/recommender answer."
+      },
+      {
+        "q": "Forecast inventory for 500 related SKUs with confidence intervals. Which algorithm?",
+        "options": [
+          "BlazingText",
+          "DeepAR",
+          "KNN",
+          "Image Classification"
+        ],
+        "answer": 1,
+        "why": "DeepAR is the probabilistic forecaster built for many related time series."
+      }
     ]
   }
 ]
