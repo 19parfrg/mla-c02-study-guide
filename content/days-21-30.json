@@ -12,6 +12,7 @@
       {
         "label": "New material",
         "steps": [
+          "📖 Read first: [SageMaker Model Monitor](https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html) (baselines, schedules, violations) · [bli55 MLOps](https://github.com/bli55/notes-aws-machine-learning/tree/main/09-machine-learning-operations) (monitoring) · [ccsusan mlops-monitoring.md](https://github.com/ccsusan/aws-mla-certificate/blob/master/mlops/mlops-monitoring.md)",
           "Read the bli55 notes on monitoring (mlops/mlops-monitoring.md) — focus on the four Model Monitor types and what each compares.",
           "Read the ccsusan mlops-monitoring.md quick reference; copy the baseline → schedule → violation flow into your own words.",
           "In the SageMaker docs, find the Model Monitor page and note what a monitoring schedule emits: violation reports in S3 plus CloudWatch metrics.",
@@ -227,6 +228,7 @@
       {
         "label": "New material",
         "steps": [
+          "📖 Read first: [bli55 MLOps](https://github.com/bli55/notes-aws-machine-learning/tree/main/09-machine-learning-operations) (CI/CD, pipelines, approval gates) · [ccsusan mlops-cicd.md](https://github.com/ccsusan/aws-mla-certificate/blob/master/mlops/mlops-cicd.md) · [ccsusan aws-ai-services.md](https://github.com/ccsusan/aws-mla-certificate/blob/master/aws-services/aws-ai-services.md) (A2I section)",
           "Read bli55 mlops-cicd.md: SageMaker Pipelines steps, Model Registry, approval gates.",
           "Read ccsusan mlops-cicd.md plus the A2I portion of aws-ai-services.md.",
           "Learn the four retraining triggers cold: scheduled, drift/violation-driven, new-data-driven, performance-degradation.",
@@ -437,6 +439,7 @@
       {
         "label": "New material",
         "steps": [
+          "📖 Read first: [ccsusan security.md](https://github.com/ccsusan/aws-mla-certificate/blob/master/security/security.md) + [security-encryption.md](https://github.com/ccsusan/aws-mla-certificate/blob/master/security/security-encryption.md) (roles, KMS, SSE-S3 vs SSE-KMS) · [SageMaker execution roles](https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html) · [bli55 security](https://github.com/bli55/notes-aws-machine-learning/tree/main/10-security-identity-and-compliance)",
           "Read ccsusan security.md and security-encryption.md: IAM roles vs policies, KMS concepts, SSE-S3 vs SSE-KMS.",
           "Read the bli55 security notes: execution roles, trust policies, key policies.",
           "Learn the two policy types cold: identity-based (attached to a role or user) vs resource-based (attached to a bucket or key).",
@@ -644,6 +647,7 @@
       {
         "label": "New material",
         "steps": [
+          "📖 Read first: [ccsusan security-network.md](https://github.com/ccsusan/aws-mla-certificate/blob/master/security/security-network.md) (VPC config, PrivateLink) · [bli55 security](https://github.com/bli55/notes-aws-machine-learning/tree/main/10-security-identity-and-compliance) (network isolation)",
           "Read ccsusan security-network.md: SageMaker VPC config, security groups, and endpoints.",
           "Read the bli55 security/networking notes on PrivateLink and network isolation.",
           "Learn the decision trio cold: network isolation (no network at all) vs VPC endpoints (private AWS access) vs NAT gateway (controlled internet egress).",
@@ -845,6 +849,7 @@
       {
         "label": "Morning sweep",
         "steps": [
+          "📖 Self-test: [ccsusan cheat sheet](https://github.com/ccsusan/aws-mla-certificate/blob/master/guides/cheat-sheet.md) row by row · [exam guide PDF](https://docs.aws.amazon.com/pdfs/aws-certification/latest/machine-learning-engineer-associate-02/machine-learning-engineer-associate-02.pdf) Domain 4 tasks",
           "Re-read your notes from days 21–24, one day at a time; star anything you cannot explain in one sentence.",
           "Rebuild the four Model Monitor types from memory, then check against Day 21.",
           "Rebuild the retraining-trigger list and the A2I flow from memory, then check against Day 22."
@@ -854,6 +859,7 @@
       {
         "label": "Security drill",
         "steps": [
+          "📖 Re-read reds: [ccsusan security/](https://github.com/ccsusan/aws-mla-certificate/tree/master/security) · [bli55 security](https://github.com/bli55/notes-aws-machine-learning/tree/main/10-security-identity-and-compliance)",
           "From memory: execution role vs bucket policy vs key policy — which attaches to what?",
           "Write the two S3 bucket-policy patterns (SSE-KMS enforcement, TLS enforcement) from memory.",
           "From memory: network isolation vs VPC endpoint vs NAT gateway — when is each the answer?"
@@ -1106,6 +1112,7 @@
       {
         "label": "Cheat-sheet pass",
         "steps": [
+          "📖 Read: [ccsusan cheat sheet](https://github.com/ccsusan/aws-mla-certificate/blob/master/guides/cheat-sheet.md) — the primary triage document, row by row as a self-test",
           "Read the ccsusan cheat sheet end to end; mark each row green (could teach it), yellow (fuzzy), or red (blank).",
           "Do the same against the exam guide's task statements — every task should map to something you know.",
           "Tally reds and yellows per domain; the domain with the most becomes tomorrow's priority."
@@ -1287,6 +1294,7 @@
       {
         "label": "Targeted repair — reds",
         "steps": [
+          "📖 Repair sources: [bli55 notes](https://github.com/bli55/notes-aws-machine-learning) (find your topic folder) · [ccsusan notes](https://github.com/ccsusan/aws-mla-certificate) (quick-reference tables)",
           "Work the weak-areas list top-down; for each red, re-read the assigned source, then immediately do 5 questions on just that topic.",
           "If a red needs a lab, run the smallest possible version (console or SDK) and clean up afterward — delete endpoints, remove policies.",
           "Re-rate each item after repair; anything still red gets flagged for the Day 28 review session."
@@ -1470,6 +1478,7 @@
       {
         "label": "Rigorous review",
         "steps": [
+          "📖 For each miss: [ccsusan cheat sheet](https://github.com/ccsusan/aws-mla-certificate/blob/master/guides/cheat-sheet.md) one-line rule · [exam guide PDF](https://docs.aws.amazon.com/pdfs/aws-certification/latest/machine-learning-engineer-associate-02/machine-learning-engineer-associate-02.pdf) task statements",
           "For every wrong answer, write two things: why the right answer is right, and why your pick was wrong.",
           "Apply the same treatment to flagged questions you guessed right — luck is not knowledge.",
           "Sort every miss into one bucket: knowledge gap, misread question, AWS-specific gotcha, or trap wording."
@@ -1644,6 +1653,7 @@
       {
         "label": "Review + compare",
         "steps": [
+          "📖 For repeat misses: [exam guide PDF](https://docs.aws.amazon.com/pdfs/aws-certification/latest/machine-learning-engineer-associate-02/machine-learning-engineer-associate-02.pdf) task statements · [ccsusan cheat sheet](https://github.com/ccsusan/aws-mla-certificate/blob/master/guides/cheat-sheet.md)",
           "Run the same rigorous review protocol: every miss gets the right-answer reasoning plus your error's cause.",
           "Compare against Day 28: score delta, per-domain deltas, and repeat misses — repeats are the emergency.",
           "Verify the Day 28 fix list: are those topics actually repaired, or did they miss again?"
@@ -1819,6 +1829,7 @@
       {
         "label": "Light review",
         "steps": [
+          "📖 Final skim: [exam guide (web)](https://docs.aws.amazon.com/aws-certification/latest/machine-learning-engineer-associate-02/machine-learning-engineer-associate-02.html) domain weights — then close it",
           "Read your one-line fix lists from Days 28–29 — recognition only, no new study.",
           "Take the 3 confidence questions below; if all three feel obvious, you are done.",
           "Close the books. The work is banked."
