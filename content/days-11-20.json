@@ -205,7 +205,7 @@
       {
         "label": "ccsusan notes — SageMaker training",
         "note": "Exam-focused cheat-sheet style notes on training jobs and hyperparameters.",
-        "url": "https://github.com/ccsusan/aws-mla-certification-notes"
+        "url": "https://github.com/ccsusan/aws-mla-certificate"
       },
       {
         "label": "AWS SageMaker examples (official)",
@@ -414,7 +414,7 @@
       {
         "label": "ccsusan notes — training & fine-tuning",
         "note": "Cheat-sheet style summary of tuning concepts.",
-        "url": "https://github.com/ccsusan/aws-mla-certification-notes"
+        "url": "https://github.com/ccsusan/aws-mla-certificate"
       },
       {
         "label": "Tutorials Dojo MLA-C02 practice exams",
@@ -634,7 +634,7 @@
       {
         "label": "ccsusan notes — model training & evaluation",
         "note": "Exam-focused metric definitions and comparison tables.",
-        "url": "https://github.com/ccsusan/aws-mla-certification-notes"
+        "url": "https://github.com/ccsusan/aws-mla-certificate"
       },
       {
         "label": "Skill Builder — MLA-C02 prep",
@@ -1241,7 +1241,7 @@
       {
         "label": "ccsusan notes — MLOps & deployment",
         "note": "Cheat-sheet style endpoint comparison tables.",
-        "url": "https://github.com/ccsusan/aws-mla-certification-notes"
+        "url": "https://github.com/ccsusan/aws-mla-certificate"
       },
       {
         "label": "AWS SageMaker examples (official)",
@@ -1452,7 +1452,7 @@
       {
         "label": "ccsusan notes — MLOps & deployment",
         "note": "Cheat-sheet comparisons of blue/green vs canary vs A/B.",
-        "url": "https://github.com/ccsusan/aws-mla-certification-notes"
+        "url": "https://github.com/ccsusan/aws-mla-certificate"
       }
     ],
     "title": "Deployment strategies",
@@ -1646,7 +1646,7 @@
       {
         "label": "ccsusan notes — MLOps & deployment",
         "note": "Cheat-sheet summaries of registry and JumpStart.",
-        "url": "https://github.com/ccsusan/aws-mla-certification-notes"
+        "url": "https://github.com/ccsusan/aws-mla-certificate"
       }
     ],
     "title": "Model Registry, Model Cards & JumpStart",
@@ -1847,7 +1847,7 @@
       {
         "label": "ccsusan notes — MLOps & deployment",
         "note": "Cheat-sheet summaries of orchestration options.",
-        "url": "https://github.com/ccsusan/aws-mla-certification-notes"
+        "url": "https://github.com/ccsusan/aws-mla-certificate"
       }
     ],
     "title": "Orchestration: Pipelines, Step Functions, EventBridge",
