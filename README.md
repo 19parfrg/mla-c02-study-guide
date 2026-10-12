@@ -1,20 +1,48 @@
-# MLA-C02 Study Guide — 30-Day Interactive Prep
+# MLA-C02 Study Quest — 26-Day Gamified Prep
 
-Interactive study companion for the **AWS Certified Machine Learning Engineer – Associate (MLA-C02)** exam (currently in beta).
+Gamified study plan for the **AWS Certified Machine Learning Engineer – Associate (MLA-C02)** exam (currently in beta).
 
-**Live site:** enable GitHub Pages on this repo (Settings → Pages → Deploy from branch → `main` → `/(root)`) and the guide will be served from there.
+**Live site:** https://19parfrg.github.io/mla-c02-study-guide/ (GitHub Pages, served from `main`).
 
-## What's inside
+## The plan
 
-- **30 study days** across 6 weeks, each with:
-  - Timed study blocks (review / new material / hands-on lab / practice + teach-it-back) with checkable tasks
-  - Detailed exam-focused notes, key terms, and curated resource links
-  - Hands-on labs (with copy-paste code) and cost-hygiene reminders
-  - A quiz per day with instant feedback and explanations
-- **Review days** every Friday with cumulative 10-question quizzes
-- **Checkpoints**: Day 15 (agentic AI + full practice exam) and Days 28–29 (timed practice exams)
-- **Progress tracking** — checkboxes, quiz scores, and completed days persist in the browser via `localStorage` (nothing leaves your device)
-- Dark-only professional theme, keyboard navigation (←/→), responsive layout
+26 days at 4–5 hours each, in five chapters that follow the exam domains:
+
+| Chapter | Days | Covers | Boss |
+|---|---|---|---|
+| 1 · Data | 1–7 | Domain 1: Data Preparation (28%) | Day 7 |
+| 2 · Models | 8–14 | Domain 2: ML Model and Foundation Model Development (24%) | Day 14 |
+| 3 · Deploy | 15–18 | Domain 3: Deployment and Orchestration (24%) | Day 18 |
+| 4 · Operate | 19–22 | Domain 4: Operating, Monitoring, Securing (24%) | Day 22 |
+| 5 · Endgame | 23–26 | Triage, two timed practice exams, exam eve (light day) | — |
+
+Days 7, 18, and 22 cover the generative AI skills added in MLA-C02: vector stores, embeddings, Retrieval Augmented Generation (RAG) data prep, knowledge bases, agents, prompt management, evaluation, cost, and guardrails.
+
+## Daily loop
+
+1. **Bounty board** — questions you missed come back after 1, 3, and 7 days.
+2. **Flashcards** — key terms from every day you have reached, on a widening schedule.
+3. **Today's quest** — the day's timed blocks: warm-up, new material, mission, practice.
+4. **Quiz**, and on chapter-ending days a **boss fight** (10 questions, 8 to win).
+
+## Game rules
+
+- XP: checklist step 5 · quiz right 20 / wrong 5 · mission 40 · day complete 50 · boss hit 30 · boss win 100 · bounty 30 · flashcard 3.
+- 100 XP in a day keeps the streak. Every 7-day streak banks a freeze (max 2) that covers one missed day.
+- Four domain mastery bars roll up, weighted 28/24/24/24, into a readiness score. It measures this question bank, not a predicted exam score.
+- Progress lives in this browser's `localStorage`. Nothing leaves the device, and a different browser or URL starts from zero.
+
+## AWS missions
+
+17 of the days have a hands-on mission in a real AWS account. Work through **Base camp** on the HQ page first: budget alert, AWS command line interface (CLI), Region, and Bedrock model access.
+
+After every mission, check for leftovers that keep billing:
+
+```powershell
+.\tools\aws-sweep.ps1 -Region us-east-1
+```
+
+The script is read-only. It lists endpoints, notebooks, running jobs, knowledge bases, vector stores, and similar resources; it deletes nothing.
 
 ## Structure
 
@@ -22,31 +50,24 @@ Interactive study companion for the **AWS Certified Machine Learning Engineer �
 |---|---|
 | `index.html` | Page shell |
 | `styles.css` | Dark theme |
-| `app.js` | Rendering, navigation, quizzes, progress tracking |
-| `data.js` | All 30 days of study content |
-| `content/` | Source JSON per 10-day block (authoring source for `data.js`) |
+| `app.js` | Rendering, game engine, progress tracking |
+| `data-1.js` … `data-3.js` | Generated content bundles |
+| `content/` | Source JSON per block of days |
+| `tools/build.py` | Regenerates the `data-N.js` bundles from `content/` |
+| `tools/aws-sweep.ps1` | Read-only billing-leftover check |
 
 ## Authoring
 
-Day content lives in `content/days-*.json`. After editing, regenerate the `data-N.js` chunks (kept small so they stay editable and load fast):
+Edit `content/days-*.json`, then rebuild and bump the `?v=` number on the script tags in `index.html` so browsers pick up the change:
 
 ```bash
-python3 - <<'EOF'
-import json
-days = []
-for f in ['days-01-10.json','days-11-20.json','days-21-30.json']:
-    days += json.load(open('content/'+f))
-for i,(a,b) in enumerate([(1,10),(11,20),(21,30)],1):
-    part = [d for d in days if a <= d["day"] <= b]
-    blob = json.dumps(part, ensure_ascii=False, separators=(",",":"))
-    js = "window.STUDY_DAYS="+blob+";" if i==1 else "window.STUDY_DAYS.push("+blob[1:-1]+");"
-    open(f"data-{i}.js","w").write(js)
-EOF
+python tools/build.py
 ```
 
-`index.html` loads `data-1.js`, `data-2.js`, `data-3.js` in order before `app.js`.
+Day fields beyond the basics: `week` (chapter 1–5), `dom` (exam domain 1–4 for mastery, 0 to exclude), `boss` (`name`, `intro`, `quiz`), and on blocks `mission`, `aws`, `cost`.
 
 ## Exam facts
 
-- Exam: MLA-C02 (beta, code ME1-C02) · $75 beta · 85 questions · 170 minutes
+- Exam: MLA-C02 (beta, code ME1-C02) · $75 beta · 85 questions · 170 minutes · passing score 720/1000
 - Domains: Data Preparation 28% · Model/FM Development 24% · Deployment & Orchestration 24% · Operating/Monitoring/Securing 24%
+- Standard (non-beta) version launches January 14, 2027
